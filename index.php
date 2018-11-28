@@ -15,26 +15,13 @@
             border: 0 !important;
 			}
 			*/
-			header{
-            height: 100px;
-            background-color: darkgray;
-			}
 			footer{
-            height: 100px;
-			width:100%;
-            background-color: darkgray;
 			z-index:-999 !important;
-			}
-			.card{
-            border: 1px solid grey !important;
-            height: 100%;
-			}
-			.card-group{
-            display: inline-block;
 			}
 			.info{
             display: none;
 			}
+			
 			.card:hover .info{
             display: initial;
 			}
@@ -43,47 +30,81 @@
 			border-right:0px;
 			}
 			
-			li.blockquote-footer{
-            display: inline-block;
-        }
-        .footer-top{
+			.footer-top{
             color: rgb(211, 208, 208);
             background-color: rgb(71, 79, 87);
-        }
-        .footer-top li{
+			}
+			.footer-top ul{
+			list-style-type:none;
+			}
+			.footer-top li{
             color: rgb(211, 208, 208);
-        }
-        .footer-bot{
+			}
+			.footer-bot{
             background-color: rgb(131, 143, 158);
-        }
-        .footer-bot p{
+			}
+			.footer-bot p{
             color: rgb(211, 208, 208);
-        }
-		footer > .row{
-		padding:0 !important;
-		margin: 0 !important;
-		}
+			}
+			footer > .row{
+			padding:0 !important;
+			margin: 0 !important;
+			}
+			<!-- Reglas de las columnas -->			
+			@media (min-width: 34em) {
+			.card-columns {
+			-webkit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2;
+			}
+			}
+			
+			@media (min-width: 48em) {
+			.card-columns {
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+			}
+			}
+			
+			@media (min-width: 62em) {
+			.card-columns {
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4;
+			}
+			}
+			
+			@media (min-width: 75em) {
+			.card-columns {
+			-webkit-column-count: 5;
+			-moz-column-count: 5;
+			column-count: 5;
+			}
+			}
 		</style>
 	</head>
 	<body>
 		<?php include ('./top.php');?>
 		<div class="container">
-			<div class="row">
+		<div class="row">
+			<div class="card-columns">
 				<?php for($i=1;$i<=10;$i++){?>				
-						<div class="card col-xl-2 col-md-3 col-4 mb-2 mt-2">						
-							<img class="card-img-top" src="./gallery/bananas.jpg" alt="Card image cap">
-							<div class="card-body">
-								<p class="card-title"><small>Card title</small></p>
-								<div class="row info">
-									<p class="card-text col-12"><small>This is a wider card with supporting text below as a natural.</small></p>
-									<input type="number" min="1" value="1" class="col-7 inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary col-4"><span class="oi oi-cart"></button>
+					<div class="card ">						
+						<img class="card-img-top" src="./gallery/bananas.jpg" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-title"><small>Card title</small></p>
+							<div class="info">
+								<p class="card-text col-12"><small>This is a wider card with supporting text below as a natural.</small></p>
+								<input type="number" min="1" value="1" class="col-7 inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
+								<button type="button" class="btn btn-secondary col-4"><span class="oi oi-cart"></button>
 								</div>
 							</div>
 						</div>					
-				<?php } ?>				
+					<?php } ?>
+					</div>
+					</div>
 			</div>
-		</div>
 			<?php include('./footer.php');?>
-	</body>
-</html>
+		</body>
+	</html>		
