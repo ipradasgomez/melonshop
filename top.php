@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/iconic-glyphs.css">
     <link rel="stylesheet" href="./css/mystyles.css">
     <title>Groserias</title>
     <style>
@@ -24,8 +25,7 @@
         <div class="col-11 d-flex justify-content-end">
             <div class="btn-group btn-topmenu" role="group" aria-label="Menu Bar">
                 <button type="button" class="btn btn-light">Left</button>
-                <button type="button" class="btn btn-light"><img class="shopping"
-                                                                 src="./gallery/icons/shoppingcart.png"/></button>
+                <button type="button" class="btn btn-light"><span class="iconic" data-glyph="heart" title="heart" aria-hidden="true"></span></button>
                 <button type="button" class="btn btn-light">Right</button>
                 <div class="btn-group" role="group">
                     <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle"

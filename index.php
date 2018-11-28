@@ -37,9 +37,7 @@
     </style>
 </head>
 <body>
-    <header class="row">
-
-    </header>
+    <?php include ('./top.php');?>
     <div class="container">
         <div class="row m-4">
                 <div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
