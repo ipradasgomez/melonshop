@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>MelonShop</title>    
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/iconic-glyphs.css">
+		<link rel="stylesheet" href="./css/open-iconic-bootstrap.css">
 		<link rel="stylesheet" href="./css/mystyles.css"><style>
 			/*
 			*{
@@ -22,13 +22,17 @@
 			footer{
             height: 100px;
             background-color: darkgray;
+			z-index:-999 !important;
 			}
 			.card{
             border: 1px solid grey !important;
 			}
+			.card-body{
+			padding: .8rem;
+			}
 			.info{
             display: none;
-			}
+			}			
 			.card-body:hover .info{
             display: initial;
 			}
@@ -41,146 +45,27 @@
 		<?php include ('./top.php');?>
 		<div class="container">
 			<div class="row m-4">
-                <div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+			<?php for($i=1;$i<=10;$i++){?>
 				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
 					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
+						<img class="card-img-top" src="./gallery/bananas.jpg" alt="Card image cap">
 						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
+							<p class="card-title">Banana<small>1,21 €/kg</small></p>							
 							<div class="info">
 								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
 								<div class="btn-group" role="group" aria-label="Basic example">
 									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
+									<button type="button" class="btn btn-secondary btn2">Icon<span class="iconic" data-glyph="heart" title="heart" aria-hidden="true"></span></button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./images/test.png" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><small>Card title</small></h5>
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icono Carro</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
+			<?php } ?>
 				
 			</div>
 		</div>
-		<footer class="row fixed-bottom">
+		<footer>
 			
 		</footer>
 		
