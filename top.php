@@ -8,9 +8,10 @@
         </div>
         <div class="col-11 d-flex justify-content-end">
             <div class="btn-group btn-topmenu" role="group" aria-label="Menu Bar">
-                <button type="button" class="btn btn-light">Left</button>
-                <button type="button" class="btn btn-light"><span class="iconic" data-glyph="heart" title="heart" aria-hidden="true"></span></button>
-                <button type="button" class="btn btn-light">Right</button>
+			<input type="text" class="form-control inputCant" placeholder="Buscar" >
+			<button type="button" class="btn btn-light"><span class="oi oi-magnifying-glass"></span></button>
+                <button type="button" class="btn btn-light"><span class="oi oi-person"></span></button>
+                <button type="button" class="btn btn-light"><span class="oi oi-basket"></span></button>                
                 <div class="btn-group" role="group">
                     <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

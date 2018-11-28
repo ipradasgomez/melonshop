@@ -38,6 +38,7 @@
 			}
 			.inputCant{
             border-radius: 0.25rem 0 0 0.25rem;
+			border-right:0px;
 			}
 		</style>
 	</head>
@@ -54,8 +55,8 @@
 							<div class="info">
 								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
 								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2">Icon<span class="iconic" data-glyph="heart" title="heart" aria-hidden="true"></span></button>
+									<input type="number" class="form-control inputCant" placeholder="Uds" aria-label="Input group example" aria-describedby="btnGroupAddon">
+									<button type="button" class="btn btn-secondary btn2"><span class="oi oi-cart"></span></button>
 								</div>
 							</div>
 						</div>
