@@ -1,19 +1,3 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/iconic-glyphs.css">
-    <link rel="stylesheet" href="./css/mystyles.css">
-    <title>Groserias</title>
-    <style>
-
-    </style>
-</head>
-<body>
 <nav class="container-fluid data">
     <div class="row brand-row align-self-center">
         <div class="col-4 offset-1">
@@ -41,10 +25,3 @@
         </div>
     </div>
 </nav>
-<footer>
-    <script src="./js/jquery.js"></script>
-    <script src="./js/popper.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-</footer>
-</body>
-</html>
