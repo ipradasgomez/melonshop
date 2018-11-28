@@ -21,57 +21,71 @@
 			}
 			footer{
             height: 100px;
+			width:100%;
             background-color: darkgray;
 			z-index:-999 !important;
 			}
 			.card{
             border: 1px solid grey !important;
+            height: 100%;
 			}
-			.card-body{
-			padding: .8rem;
+			.card-group{
+            display: inline-block;
 			}
 			.info{
             display: none;
-			}			
-			.card-body:hover .info{
+			}
+			.card:hover .info{
             display: initial;
 			}
 			.inputCant{
             border-radius: 0.25rem 0 0 0.25rem;
 			border-right:0px;
 			}
+			
+			li.blockquote-footer{
+            display: inline-block;
+        }
+        .footer-top{
+            color: rgb(211, 208, 208);
+            background-color: rgb(71, 79, 87);
+        }
+        .footer-top li{
+            color: rgb(211, 208, 208);
+        }
+        .footer-bot{
+            background-color: rgb(131, 143, 158);
+        }
+        .footer-bot p{
+            color: rgb(211, 208, 208);
+        }
+		footer > .row{
+		padding:0 !important;
+		margin: 0 !important;
+		}
 		</style>
 	</head>
 	<body>
 		<?php include ('./top.php');?>
 		<div class="container">
-			<div class="row m-4">
-			<?php for($i=1;$i<=10;$i++){?>
-				<div class="card-group col-xl-2 col-md-3 col-4 mb-2 mt-2 producto">
-					<div class="card">
-						<img class="card-img-top" src="./gallery/bananas.jpg" alt="Card image cap">
-						<div class="card-body">
-							<p class="card-title">Banana<small>1,21 €/kg</small></p>							
-							<div class="info">
-								<p class="card-text"><small>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</small></p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<input type="number" class="form-control inputCant" placeholder="Uds" aria-label="Input group example" aria-describedby="btnGroupAddon">
-									<button type="button" class="btn btn-secondary btn2"><span class="oi oi-cart"></span></button>
+			<div class="row">
+				<?php for($i=1;$i<=10;$i++){?>				
+						<div class="card col-xl-2 col-md-3 col-4 mb-2 mt-2">						
+							<img class="card-img-top" src="./gallery/bananas.jpg" alt="Card image cap">
+							<div class="card-body">
+								<p class="card-title"><small>Card title</small></p>
+								<div class="row info">
+									<p class="card-text col-12"><small>This is a wider card with supporting text below as a natural.</small></p>
+									<input type="number" min="1" value="1" class="col-7 inputCant" placeholder="Cantidad" aria-label="Input group example" aria-describedby="btnGroupAddon">
+									<button type="button" class="btn btn-secondary col-4"><span class="oi oi-cart"></button>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-			<?php } ?>
-				
+						</div>					
+				<?php } ?>				
 			</div>
 		</div>
 		<footer>
-			
+			<?php include('./footer.php');?>
 		</footer>
-		
-		<script src="./js/jquery.js"></script>
-		<script src="./js/popper.js"></script>
-		<script src="./js/bootstrap.min.js"></script>
 	</body>
 </html>
