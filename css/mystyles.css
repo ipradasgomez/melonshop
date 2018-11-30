@@ -14,9 +14,6 @@ body {
 .data {
     background-color: rgba(255, 255, 6, 0.5);
 }
-.brand-row{
-    max-width:1336px !important;
-}
 
 .logo-img{
     height: 70px;
@@ -27,9 +24,6 @@ body {
     font-size:40px;
     display:inline;
     font-weight: bold;
-}
-.sticky-top{
-    width: 120%;
 }
 .btnNav{
     height: 38px;
