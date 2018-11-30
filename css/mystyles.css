@@ -13,8 +13,6 @@ body {
 
 .data {
     background-color: rgba(255, 255, 6, 0.5);
-
-    margin-top: 25px;
 }
 .brand-row{
     max-width:1336px !important;
@@ -30,7 +28,15 @@ body {
     display:inline;
     font-weight: bold;
 }
-
+.sticky-top{
+    width: 120%;
+}
+.btnNav{
+    height: 38px;
+}
+.btn-topmenu{
+    margin-top: 20px;
+}
 .btn-topmenu{
     margin-bottom:10px;
 }

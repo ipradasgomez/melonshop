@@ -89,7 +89,7 @@
 		<div class="container">
 		<div class="row">
 			<div class="card-columns">
-				<?php for($i=1;$i<=10;$i++){?>				
+				<?php for($i=1;$i<=20;$i++){?>				
 					<div class="card ">						
 						<img class="card-img-top" src="./gallery/bananas.jpg" alt="Card image cap">
 						<div class="card-body">
