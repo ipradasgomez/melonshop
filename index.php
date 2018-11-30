@@ -38,7 +38,6 @@
             border-right: 0px;
         }
 
-
         <!--
         Reglas de las columnas
 
@@ -83,15 +82,19 @@
         <div class="card-columns">
             <?php for ($i = 1; $i <= 15; $i++) { ?>
                 <div class="card ">
-                    <img class="card-img-top" src="./gallery/bananas.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="./gallery/bananas.jpg" alt="Card image cap" data-toggle="tooltip"
+                         data-placement="top" title="Bananas criadas en criaderos submarinos y en cautividad.">
                     <div class="card-body">
-                        <p class="card-title">
-                            <small>Card title</small>
-                        </p>
+                        <div class="card-title">
+
+                        </div>
+                        <div class="row">
+                            <div class="col-7">Banana super larga</div>
+                            <div class="col-5">
+                                <small><b>2,65€/kg</b></small>
+                            </div>
+                        </div>
                         <div class="info">
-                            <p class="card-text col-12">
-                                <small>This is a wider card with supporting text below as a natural.</small>
-                            </p>
                             <input type="number" min="1" value="1" class="col-7 inputCant" placeholder="Cantidad"
                                    aria-label="Input group example" aria-describedby="btnGroupAddon">
                             <button type="button" class="btn btn-secondary col-4"><span class="oi oi-cart"></button>
