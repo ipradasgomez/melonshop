@@ -66,3 +66,31 @@ body {
    box-shadow:0 0 1px #333;
    z-index:100;
 }
+
+
+
+.footer-top {
+    color: rgb(211, 208, 208);
+    background-color: rgb(71, 79, 87);
+}
+
+.footer-top ul {
+    list-style-type: none;
+}
+
+.footer-top li {
+    color: rgb(211, 208, 208);
+}
+
+.footer-bot {
+    background-color: rgb(131, 143, 158);
+}
+
+.footer-bot p {
+    color: rgb(211, 208, 208);
+}
+
+footer > .row {
+    padding: 0 !important;
+    margin: 0 !important;
+}

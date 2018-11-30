@@ -16,6 +16,7 @@
         border: 0 !important;
         }
         */
+
         .main-container {
             margin-top: 25px;
         }
@@ -37,31 +38,6 @@
             border-right: 0px;
         }
 
-        .footer-top {
-            color: rgb(211, 208, 208);
-            background-color: rgb(71, 79, 87);
-        }
-
-        .footer-top ul {
-            list-style-type: none;
-        }
-
-        .footer-top li {
-            color: rgb(211, 208, 208);
-        }
-
-        .footer-bot {
-            background-color: rgb(131, 143, 158);
-        }
-
-        .footer-bot p {
-            color: rgb(211, 208, 208);
-        }
-
-        footer > .row {
-            padding: 0 !important;
-            margin: 0 !important;
-        }
 
         <!--
         Reglas de las columnas
