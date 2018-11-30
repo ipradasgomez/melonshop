@@ -1,4 +1,3 @@
-
 <nav class="container-fluid sticky-top data">
      <div class="row brand-row align-self-center sticky-top">
         <div class="col-4 offset-1">
