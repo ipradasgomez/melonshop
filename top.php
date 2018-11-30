@@ -1,5 +1,5 @@
 <nav class="container-fluid data">
-    <div class="row brand-row align-self-center">
+    <div class="row align-self-center">
         <div class="col-4 offset-1">
             <a class="navbar-brand" href="#">
                 <img src="./gallery/watermelon.png" class="align-middle d-inline-block align-top logo-img" alt="">
