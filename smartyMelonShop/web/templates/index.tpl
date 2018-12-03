@@ -1,5 +1,5 @@
 {config_load file="test.conf" section="setup"}
-{include file="header.tpl" title="Melon Shop" new=$new}
+{include file="header.tpl" title="Melon Shop" new=$new logoTitle="MelonShop"}
 <div class="container main-container">
     <div class="row">
         <div class="card-columns">

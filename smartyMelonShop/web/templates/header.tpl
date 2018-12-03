@@ -14,7 +14,7 @@
         <div class="col-4 offset-1">
             <a class="navbar-brand sticky-top" href="#">
                 <img src="../resources/gallery/watermelon.png" class="align-middle d-inline-block align-top logo-img" alt="">
-                <h1 class="align-middle brand-text">MelonShop</h1>
+                <h1 class="align-middle brand-text">{$logoTitle}</h1>
             </a>
         </div>
         <div class="col-6 d-flex justify-content-end">
@@ -26,11 +26,11 @@
                 <div class="btn-group" role="group">
                     <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        Lista
                     </button>
                     <div class="dropdown-menu" aria-labelledby="profileMenu">
-                        <a class="dropdown-item" href="#">Dropdown link</a>
-                        <a class="dropdown-item" href="#">Dropdown link</a>
+                        <a class="dropdown-item" href="#">Elemento 1</a>
+                        <a class="dropdown-item" href="#">Elemento 2</a>
                     </div>
                 </div>
             </div>
