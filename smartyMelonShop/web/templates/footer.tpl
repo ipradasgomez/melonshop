@@ -21,23 +21,13 @@
 <div class="col-12 justify-content-center footer-bot"><p class="small text-center">texto de Copy, derechos y demás</p></div>
 </div>
 </footer>
-<<<<<<< HEAD:web/templates/footer.tpl
 <script src="../resources/js/jquery.js"></script>
 <script src="../resources/js/popper.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
-=======
-<script src="./js/jquery.js"></script>
-<script src="./js/popper.js"></script>
-<script src="./js/bootstrap.min.js"></script>
->>>>>>> 90ff0087c827807a1440d583eb778f5dd83afc3e:footer.php
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
-<<<<<<< HEAD:web/templates/footer.tpl
 </script>
 </body>
 </html>
-=======
-</script>
->>>>>>> 90ff0087c827807a1440d583eb778f5dd83afc3e:footer.php
