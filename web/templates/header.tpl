@@ -37,3 +37,5 @@
         </div>
     </div>
 </nav>
+{* Este div abr eel contenedor centrado para las páginas *}
+<div class="container main-container">

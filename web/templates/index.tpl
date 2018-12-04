@@ -1,6 +1,4 @@
-{config_load file="test.conf" section="setup"}
 {include file="header.tpl" title="Melon Shop" new=$new logoTitle="MelonShop"}
-<div class="container main-container">
     <div class="row">
         <div class="card-columns">
             {for $foo=1 to 15}
@@ -21,5 +19,4 @@
                 {/for}
         </div>
     </div>
-</div>
 {include file="footer.tpl"}
