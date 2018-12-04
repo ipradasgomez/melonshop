@@ -1,4 +1,4 @@
-{include file="header.tpl" title="Melon Shop" new=$new logoTitle="MelonShop" mostrarBarra=true usuarioConectado=false}
+{include file="header.tpl" title="Melon Shop" new=$new logoTitle="MelonShop" mostrarBarra=true usuarioConectado=$usuarioConectado}
     <div class="row">
         <div class="card-columns">
             {for $foo=1 to 15}
