@@ -18,6 +18,7 @@
             </a>
         </div>
         <div class="col-6 d-flex justify-content-end">
+        {if !$mostrarBarra}
             <div class="btn-group btn-topmenu" role="group" aria-label="Menu Bar">
 			<input type="text" class="form-control inputCant" placeholder="Buscar" >
 			<button type="button" class="btn btn-light btnNav"><span class="oi oi-magnifying-glass"></span></button>
@@ -36,6 +37,7 @@
             </div>
         </div>
     </div>
+    {/if}
 </nav>
 {* Este div abr eel contenedor centrado para las páginas *}
 <div class="container main-container">
