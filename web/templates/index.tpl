@@ -1,8 +1,9 @@
+{config_load file="test.conf" section="setup"}
 {include file="header.tpl" title="Melon Shop" new=$new logoTitle="MelonShop"}
 <div class="container main-container">
     <div class="row">
         <div class="card-columns">
-            {for $bebe=1 to 15}
+            {for $foo=1 to 15}
                 <div class="card">
                     <img class="card-img-top" src="../resources/gallery/bananas.jpg" alt="Card image cap" data-toggle="tooltip"
                          data-placement="top" title="Bananas criadas en criaderos submarinos y en cautividad.">

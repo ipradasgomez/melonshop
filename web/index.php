@@ -5,7 +5,7 @@
  * @package Example-application
  */
 require '../init/init.php';
-$smarty->assign("new", 500);
+$smarty->assign("new", 10);
 /*
 $smarty->assign("Name", "Fred Irving Johnathan Bradley Peppergill", true);
 $smarty->assign(
@@ -20,4 +20,3 @@ $smarty->assign(
 $smarty->assign("option_values", array("NY", "NE", "KS", "IA", "OK", "TX"));
 $smarty->assign("option_selected", "NE");*/
 $smarty->display('index.tpl');
-
