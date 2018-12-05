@@ -19,22 +19,23 @@ usuarioConectado=$usuarioConectado}
           </tr>
         </thead>
         <tbody>
-          {for $foo=1 to 15}
+
+          {foreach from=$lista item=producto}
           <tr>
-            <th scope="row">{$foo}</th>
-            <td>Bananas</td>
-            <td>1.21 €/kg</td>
+            <th scope="row">{$producto[0]}</th>
+            <td>{$producto[1]}</td>
+            <td>{$producto[2]}€/{$producto[5]}</td>
             <td>
               <form><input type="hidden" name="pid" value="pid"><input type="number" min="1" value="1" class=" inputCant"
-                  placeholder="Cantidad">(kg)</form> 
+                  placeholder="Cantidad">{$producto[5]}</form> 
             </td>
-            <td>6.05 €</td>
+            <td>{$producto[2]} €</td>
             <td><button type="button" class="btn btn-info" data-toggle="tooltip"
               data-placement="top" title="Aplicar cambios"><span class="oi oi-pencil"></span></button></td>
             <td><button type="button" class="btn btn-danger" data-toggle="tooltip"
               data-placement="top" title="Eliminar del carrito"><span class="oi oi-trash"></span></button></td>
           </tr>
-          {/for}
+          {/foreach}
         </tbody>
       </table>
     </div>
