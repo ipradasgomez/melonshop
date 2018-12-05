@@ -1,4 +1,4 @@
-{include file="header.tpl" title="Melon Shop" new=20 logoTitle="MelonShop" mostrarBarra=true usuarioConectado=$usuarioConectado}
+{include file="header.tpl" title="Melon Shop" new=$new logoTitle="MelonShop" mostrarBarra=true usuarioConectado=$usuarioConectado}
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6 registro order-2 order-md-1">
