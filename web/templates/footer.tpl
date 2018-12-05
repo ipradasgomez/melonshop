@@ -3,10 +3,10 @@
 <footer class="pt-4">
 <div class="row justify-content-center footer-top">
 	<ul class="col-2">
-		<li ><h1><small>Lista 1</small></h1></li>
-		<li class="blockquote-footer">Lista 1 li 1</li>
-		<li class="blockquote-footer">Lista 1 li 2</li>
-		<li class="blockquote-footer">Lista 1 li 3</li>
+		<li><h1><small>Redes Sociales</small></h1></li>
+		<li><span class="oi social-instagram"></span><span>@MelonShop</span></li>
+		<li><span class="oi oi-facebook"></span><span>MelonShop Frutas</span></li>
+		<li><span class="oi oi-social-twitter"></span><span>@MelonShop_</span></li>
 	</ul>
 	<ul class="col-2 offset-1">
 		<li ><h1><small>Lista 2</small></h1></li>
