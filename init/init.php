@@ -8,7 +8,7 @@
 	
 	/*Configuramos las opciones iniciales de Smarty*/
 	$smarty->force_compile = true; /*Poner a false en producción*/
-	$smarty->debugging = false; /*Poner a false en producción*/
+	$smarty->debugging = true; /*Poner a false en producción*/
 	$smarty->caching = false; /*Aumenta el rendimiento si está a true*/
 	$smarty->cache_lifetime = 120;
 
