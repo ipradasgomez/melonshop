@@ -7,7 +7,7 @@
                          data-placement="top" title="Bananas criadas en criaderos submarinos y en cautividad.">
                     <div class="card-body">
                         <div class="card-title">
-                           Banana super larga</br> <small><b>2,65€/kg</b></small>
+                           Banana super larga<br></br> <small><b>2,65€/kg</b></small>
                         </div>
                         <div class="info">
                             <input type="number" min="1" value="1" class="col-7 inputCant" placeholder="Cantidad"
