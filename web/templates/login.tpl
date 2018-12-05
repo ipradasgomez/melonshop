@@ -42,7 +42,6 @@
                             <label for="inputCity">Ciudad</label>
                             <input type="text" class="form-control" id="inputCiudad" placeholder="Málaga">
                         </div>
->>>>>>> 50cdc24a721707bfe0b1b4fe3a34e0f899a702bf
                     </div>
                     <button type="submit" class="btn btn-primary offset-4 offset-md-0 col-4">Sign in</button>
                 </form>
