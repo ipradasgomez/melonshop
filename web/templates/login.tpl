@@ -1,4 +1,4 @@
-{include file="header.tpl" title="Melon Shop" new=20 logoTitle="MelonShop" mostrarBarra=true usuarioConectado=false}
+{include file="header.tpl" title="Melon Shop" new=20 logoTitle="MelonShop" mostrarBarra=true usuarioConectado=$usuarioConectado}
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6 registro order-2 order-md-1">
@@ -43,14 +43,14 @@
                             <input type="text" class="form-control" id="inputCiudad" placeholder="Málaga">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary offset-4 offset-md-0 col-4">Sign in</button>
+                    <button type="submit" class="btn btn-primary offset-4 offset-md-0 col-4">Registrar</button>
                 </form>
             </div>
         </div>
         <div class="col-12 col-md-5 login order-1 order-md-2">
             <div class="contenedor border p-4">
                 <h1 class="text-center">Login</h1>
-                <form>
+                <form method="post" action="">
                     <div class="form-row">
                         <div class="form-group col-12">
                             <label for="exampleInputEmail1">Email :</label>
@@ -61,7 +61,7 @@
                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary offset-4 offset-md-8 col-4 col-md-4">Entrar</button>
+                    <button type="submit" name="login" id="login" class="btn btn-primary offset-4 offset-md-8 col-4 col-md-4">Entrar</button>
                 </form>
             </div>
         </div>

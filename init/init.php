@@ -14,5 +14,5 @@
 
 	//Variables para la web
 
-	$smarty->assign('usuarioConectado', true);
+	$smarty->assign('usuarioConectado', !empty($_SESSION["user"]));
 ?>

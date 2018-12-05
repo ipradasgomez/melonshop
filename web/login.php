@@ -6,7 +6,10 @@
  */
 require '../init/init.php';
 
-
+if(isset($_POST["login"])){
+    $_SESSION["user"]="algo";
+    header("Location: ./index.php");
+}
 
 
 /*
