@@ -5,7 +5,6 @@
  * @package Example-application
  */
 require '../init/init.php';
-
 $lista=[
     [1,"aceituna",1.5,"aceituna_01.jpg","descripcion de producto","kg"],
     [2,"aguacate",2.1,"aguacate_01.jpg","descripcion de producto","kg"],

@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="../resources/css/open-iconic-bootstrap.css">
     <link rel="stylesheet" href="../resources/css/mystyles.css">
 </head>
-
 <body>
     <nav class="container-fluid sticky-top data">
         <div class="row brand-row align-self-center sticky-top">
@@ -24,16 +22,18 @@
             <div class="col-6 d-flex justify-content-end">
                 {if $mostrarBarra}
                 <div class="btn-group btn-topmenu" role="group" aria-label="Menu Bar">
+                    {if $smarty.server.PHP_SELF|basename eq "index.php"}
                     <input type="text" class="form-control inputCant" placeholder="Buscar">
-                    <button type="button" class="btn btn-light btnNav" data-toggle="tooltip"
-                        data-placement="bottom" title="Buscar"><span class="oi oi-magnifying-glass"></span></button>
-                    <a href="./cart.php"><button type="button" class="btn btn-light notificationBadge btnNav" data-badge="{$new}" data-toggle="tooltip"
-                        data-placement="bottom" title="Carrito"><span
-                            class="oi oi-basket"></span></button></a>
+                    <button type="button" class="btn btn-light btnNav" data-toggle="tooltip" data-placement="bottom"
+                        title="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                    {/if}
+                    <a href="./cart.php"><button type="button" class="btn btn-light notificationBadge btnNav"
+                            data-badge="{$new}" data-toggle="tooltip" data-placement="bottom" title="Carrito"><span
+                                class="oi oi-basket"></span></button></a>
                     <div class="btn-group" role="group">
                         <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <span class="oi oi-person"></span>
+                            {if $usuarioConectado}<span><b>Ismael</b></span> {/if}<span class="oi oi-person"></span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="profileMenu">
                             {if $usuarioConectado}
