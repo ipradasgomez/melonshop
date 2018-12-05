@@ -5,7 +5,6 @@
  * @package Example-application
  */
 require '../init/init.php';
-$smarty->assign("new", 10);
 /*
 $smarty->assign("Name", "Fred Irving Johnathan Bradley Peppergill", true);
 $smarty->assign(
