@@ -2,7 +2,7 @@
 usuarioConectado=$usuarioConectado}
 <div class="row">
   <div class="col-12">
-      {include file="breadcrumb.tpl" step="1"}
+    {include file="breadcrumb.tpl" step="3"}
   </div>
   <div class="col-8">
     <div class="table-responsive">
@@ -24,11 +24,15 @@ usuarioConectado=$usuarioConectado}
             <th scope="row">{$foo}</th>
             <td>Bananas</td>
             <td>1.21 €/kg</td>
-            <td>5 (kg)</td>
+            <td>
+              <form><input type="hidden" name="pid" value="pid"><input type="number" min="1" value="1" class=" inputCant"
+                  placeholder="Cantidad">(kg)</form> 
+            </td>
             <td>6.05 €</td>
-            <td><button type="button" class="btn btn-success"><span class="oi oi-plus"></span></button><button type="button"
-                class="btn btn-warning"><span class="oi oi-minus"></span></button></td>
-            <td><button type="button" class="btn btn-danger"><span class="oi oi-trash"></span></button></td>
+            <td><button type="button" class="btn btn-info" data-toggle="tooltip"
+              data-placement="top" title="Aplicar cambios"><span class="oi oi-pencil"></span></button></td>
+            <td><button type="button" class="btn btn-danger" data-toggle="tooltip"
+              data-placement="top" title="Eliminar del carrito"><span class="oi oi-trash"></span></button></td>
           </tr>
           {/for}
         </tbody>
@@ -43,7 +47,8 @@ usuarioConectado=$usuarioConectado}
       <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>7</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>13,35 €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>3 €</span> </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>2,54 €</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>2,54 €</span>
+      </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>18,97 €</span> </li>
     </ul>
   </div>
