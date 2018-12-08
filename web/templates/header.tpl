@@ -33,7 +33,7 @@
                     <div class="btn-group" role="group">
                         <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            {if $usuarioConectado}<span><b>Ismael</b></span> {/if}<span class="oi oi-person"></span>
+                            {if $usuarioConectado}<span><b>{$usuario}</b></span> {/if}<span class="oi oi-person"></span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="profileMenu">
                             {if $usuarioConectado}

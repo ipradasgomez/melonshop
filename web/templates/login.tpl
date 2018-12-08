@@ -54,7 +54,7 @@
                     <div class="form-row">
                         <div class="form-group col-12">
                             <label for="exampleInputEmail1">Email :</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email">
                         </div>
                         <div class="form-group col-12">
                             <label for="exampleInputPassword1">Contraseña :</label>

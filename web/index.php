@@ -25,6 +25,11 @@ $lista=[
 
 $smarty->assign("lista", $lista);
 $smarty->assign("new", 10);
+
+if(isset($_SESSION['user'])){
+    $smarty->assign("usuario",$_SESSION["user"]);
+}
+
 /*
 $smarty->assign("Name", "Fred Irving Johnathan Bradley Peppergill", true);
 $smarty->assign(
