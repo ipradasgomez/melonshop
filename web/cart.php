@@ -28,7 +28,6 @@ $lista=[
     ];
 
 $smarty->assign("lista", $lista);
-$smarty->assign("usuario",$_SESSION["user"]);
 $smarty->assign("new", 10);
 //CARGAMOS EL TEMPLATE
 $smarty->display('cart.tpl');
