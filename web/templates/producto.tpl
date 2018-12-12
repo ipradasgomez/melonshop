@@ -1,9 +1,9 @@
 <div class="card">
-    <img class="card-img-top" src="../resources/gallery/images/{$producto[3]}" alt="Card image cap" data-toggle="tooltip"
-        data-placement="top" title="{$producto[4]}">
+    <img class="card-img-top" src="../resources/gallery/images/{$producto->item_photo}" alt="Card image cap" data-toggle="tooltip"
+        data-placement="top" title="{$producto->description}">
     <div class="card-body">
         <div class="card-title">
-            {$producto[1]}<br></br> <small><b>{$producto[2]}€/{$producto[5]}</b></small>
+            {$producto->item_name|ucfirst}<br></br> <small><b>{$producto->price}€/{$producto->unit_short}</b></small>
         </div>
         <div class="info">
             <input type="number" name="cantidad" min="1" value="1" class="col-7 inputCant" placeholder="Cantidad">

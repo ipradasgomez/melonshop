@@ -26,6 +26,24 @@ class DataBase
 
         return $resultado;
     }
+
+    public static function obtenerProductos()
+    {
+        $sql = "SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id;";
+        $resultado = self::ejecutaConsulta($sql);
+        $productos = array();
+
+        if ($resultado) {
+            // Añadimos un elemento por cada producto obtenido
+            $row = $resultado->fetchObject();
+            while ($row != null) {
+                $productos[] = $row;
+                $row = $resultado->fetchObject();
+            }
+        }
+
+        return $productos;
+    }
 /*
 public static function obtieneProductos()
 {
