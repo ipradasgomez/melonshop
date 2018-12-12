@@ -12,6 +12,10 @@ $smarty->debugging = false; /*Poner a false en producción*/
 $smarty->caching = false; /*Aumenta el rendimiento si está a true*/
 $smarty->cache_lifetime = 120;
 
+//Incluimos las librerias y clases necesarias de PHP
+require_once('./../phpclasses/DataBase.php');
+$BD = new DataBase();
+
 //Variables para la web
 if (basename($_SERVER['PHP_SELF'], ".php") != "login") {
     $_SESSION["pagina"] = basename($_SERVER['PHP_SELF'], ".php");
