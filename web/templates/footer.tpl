@@ -2,7 +2,7 @@
 </div>
 <footer>
 	<div class="row justify-content-center footer-top">
-		<ul class="col-2 mt-3">
+		<ul class="col-3 mt-3">
 				<li>
 						<h3><small>Síguenos</small></h3>
 					</li>
@@ -10,7 +10,7 @@
 			<li><span class="oi oi-facebook"></span><span>MelonShop Frutas</span></li>
 			<li><span class="oi oi-social-twitter"></span><span>@MelonShop_</span></li>
 		</ul>
-		<div class="col-2 mt-3">
+		<div class="col-3 mt-3">
 
 			<ul>
 				<li>
@@ -23,7 +23,7 @@
 		</div>
 
 
-		<ul class="col-2 offset-1 mt-3">
+		<ul class="col-3 offset-1 mt-3">
 			<li>
 				<h3><small>Sobre nosotros</small></h3>
 			</li>
