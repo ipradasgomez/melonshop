@@ -19,6 +19,10 @@
     margin-bottom:190px;
 }
 
+.login-form-1{
+    padding: 0;
+}
+
 .inputCant {
     border-radius: 0.25rem 0 0 0.25rem;
     border-right: 0px;
@@ -147,6 +151,10 @@ footer {
 
 .footer-bot p {
     color: rgb(211, 208, 208);
+}
+
+#loginform{
+    margin-top: -60px;
 }
 
 footer>.row {
@@ -295,7 +303,7 @@ footer>.row {
     padding: 5%;
 }
 .login-form-1{
-    padding: 9%;
+    padding: 5%;
     background:rgba(255, 255, 6,0.2);
     box-shadow: 0 5px 8px 0 rgba(255, 255, 6, 0.5), 0 9px 26px 0 rgba(255, 255, 6, 0.5);
 }
@@ -305,14 +313,14 @@ footer>.row {
     color:black;
 }
 .login-form-2{
-    padding: 9%;
+    padding: 9% 9% 9% 9%;
     background: white;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-2 h3{
     text-align: center;
     margin-bottom:12%;
-    color: #fff;
+    color: black;
 }
 .btnSubmit{
     font-weight: 600;
