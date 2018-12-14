@@ -323,6 +323,15 @@ footer>.row {
     border-radius: 1.5rem;
     padding:2%;
 }
+.btnSubmit2{
+    font-weight: 600;
+    width: 50%;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
 .btnForgetPwd{
     color: black;
     font-weight: 600;

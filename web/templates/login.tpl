@@ -29,7 +29,7 @@
                             <input type="password" class="form-control" placeholder="Your Password *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
+                            <input type="submit" class="btnSubmit2" value="Conectar" />
                         </div>
                     </form>
                 </div>
