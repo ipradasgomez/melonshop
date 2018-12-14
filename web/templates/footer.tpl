@@ -1,6 +1,6 @@
 {* Este /div cierra el contenedor abierto en el header *}
 </div>
-<footer class="pt-4">
+<footer>
 	<div class="row justify-content-center footer-top">
 		<ul class="col-2 mt-3">
 			<li>
