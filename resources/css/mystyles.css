@@ -13,10 +13,26 @@
         border: 0 !important;
         }
         */
+html{
+    height:100%;
+}
 
+
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+  }
+
+  footer{
+    position: absolute;
+    right: 0;
+    bottom: -185px;
+    left: 0;    
+    height: 175px;
+  }
 .main-container {
     margin-top: 25px;
-    margin-bottom:190px;
 }
 
 .login-form-1{
@@ -68,9 +84,8 @@ body {
     margin: 0;
     padding: 0;
 }
-
-.data {
-    background-color: rgba(255, 255, 6, 0.5);
+nav{
+    background-color:#FFFF94;
 }
 
 .logo-img {
@@ -125,12 +140,6 @@ body {
     z-index: 100;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 175px;
-}
 
 .footer-top {
     color: rgb(211, 208, 208);
@@ -230,7 +239,6 @@ footer>.row {
     width: 0;
     height: 0;
     border-top: 50px solid transparent;
-    /* Go big on the size, and let overflow hide */
     border-bottom: 50px solid transparent;
     border-left: 30px solid white;
     position: absolute;
@@ -304,7 +312,7 @@ footer>.row {
 }
 .login-form-1{
     padding: 5%;
-    background:rgba(255, 255, 6,0.2);
+    background:#FFFF94;
     box-shadow: 0 5px 8px 0 rgba(255, 255, 6, 0.5), 0 9px 26px 0 rgba(255, 255, 6, 0.5);
 }
 .login-form-1 h3{

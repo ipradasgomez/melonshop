@@ -3,18 +3,23 @@
 <footer>
 	<div class="row justify-content-center footer-top">
 		<ul class="col-2 mt-3">
-			<li>
-				<h3><small>Redes Sociales</small></h3>
-			</li>
+				<li>
+						<h3><small>Síguenos</small></h3>
+					</li>
 			<li><span class="oi oi-social-instagram"></span><span>@MelonShop</span></li>
 			<li><span class="oi oi-facebook"></span><span>MelonShop Frutas</span></li>
 			<li><span class="oi oi-social-twitter"></span><span>@MelonShop_</span></li>
-		</ul>		
+		</ul>
 		<div class="col-2 mt-3">
-			<h3><small>Localización</small></h3>
-			<p> C/ Río Janerio, s/n. Mijas-Costa 29651. Teléfono: 666555444
-				Email: melonshop.info@melshop.com
-			</p>
+
+			<ul>
+				<li>
+					<h3><small>Localización</small></h3>
+				</li>
+				<li>C/ Río Janerio, s/n. Mijas-Costa 29651.</li>
+				<li>Teléfono: 666555444</li>
+				<li>Email: melonshop.info@melshop.com</li>
+			</ul>
 		</div>
 
 
@@ -22,9 +27,15 @@
 			<li>
 				<h3><small>Sobre nosotros</small></h3>
 			</li>
-			<a href="#"><li>Quiénes somos</li></a>
-			<a href="#"><li>Envíos</li></a>
-			<a href="#"><li>FAQs</li></a>
+			<a href="#">
+				<li>Quiénes somos</li>
+			</a>
+			<a href="#">
+				<li>Envíos</li>
+			</a>
+			<a href="#">
+				<li>FAQs</li>
+			</a>
 		</ul>
 		<div class="col-12 justify-content-center footer-bot">
 			<p class="small text-center">MelonShop© 2018. Todos los derechos reservados.</p>
