@@ -23,7 +23,7 @@ usuarioConectado=$usuarioConectado}
           {foreach from=$lista item=producto}
           <tr>
             <th scope="row">{$producto[0]}</th>
-            <td>{$producto[1]}</td>
+            <td>{$producto[1]|ucfirst}</td>
             <td>{$producto[2]}€/{$producto[5]}</td>
             <td>
               <form><input type="hidden" name="pid" value="pid"><input type="number" min="1" value="1" class=" inputCant"
