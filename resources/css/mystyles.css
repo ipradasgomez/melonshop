@@ -146,6 +146,10 @@ nav{
     background-color: rgb(71, 79, 87);
 }
 
+.error{
+    color: red;
+}
+
 .footer-top ul {
     list-style-type: none;
 }

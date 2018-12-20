@@ -27,6 +27,33 @@ class DataBase
         return $resultado;
     }
 
+    public static function obtenerUsuario($email){
+        $sql = "SELECT nombre, apellidos, email, clave from users where email = '".$email."'";
+        $resultado = self::ejecutaConsulta($sql);
+        
+        $usuario = array();
+        $row = $resultado->fetchObject();
+
+        if ($row) {
+            while ($row != null) {
+                $usuario[] = $row;
+                $row = $resultado->fetchObject();
+            }
+        }else{
+            $usuario = null;
+        }
+        
+        return $usuario;
+    }
+    
+    public static function registrarUsuario($nombre, $apellidos, $genero, $email, $clave){
+        $sql="INSERT INTO users(nombre,apellidos,genero,fnac,email,clave) values ('";
+        $sql = $sql.$nombre."','".$apellidos."','".$genero."','2147483647','".$email."','".$clave."')";
+
+        $insercion = self::ejecutaConsulta($sql);
+
+    }
+    
     public static function obtenerProductos()
     {
         $sql = "SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id;";
@@ -41,7 +68,6 @@ class DataBase
                 $row = $resultado->fetchObject();
             }
         }
-
         return $productos;
     }
 /*
