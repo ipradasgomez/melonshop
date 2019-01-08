@@ -4,53 +4,94 @@
         <div class="container login-container">
             <div class="row" id="loginform">
                 <div class="col-md-6 login-form-1">
-                    
                     <h3>Registro</h3>
                     <form action="" method="post">
                         <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputUsuario">Nombre de Usuario</label>
+                                    <input type="text" class="form-control" id="inputUsuario" name="usuario" placeholder="Usuario">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputContrasena">Contraseña</label>
+                                    <input type="password" class="form-control" id="inputContrasena" name="clave" placeholder="Contraseña">
+                                </div>
+                            </div>
+                        <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">Nombre</label>
+                                <label for="inputNombre">Nombre</label>
                                 <input type="text" class="form-control" id="inputNombre" name="nombre" placeholder="Nombre">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputPassword4">Apellidos</label>
+                                <label for="inputApellidos">Apellidos</label>
                                 <input type="text" class="form-control" id="inputApellidos" name="apellidos" placeholder="Apellidos">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Genero</label>
-                                <select class="custom-select" name="genero">
+                                <label for="selectGenero">Genero</label>
+                                <select class="custom-select" id="selectGenero" name="genero">
                                     <option value="m">Genero</option>
                                     <option value="m">Male</option>
                                     <option value="f">Female</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputAddress">Contraseña</label>
-                                <input type="password" class="form-control" id="inputContrasena" name="clave" placeholder="Contraseña">
+                                <label for="selectCiudad">Ciudad</label>
+                                <select class="custom-select" id="selectCiudad" name="ciudad">
+                                    {foreach from=$ciudades item=ciudad}
+                                        <option value="{$ciudad->id}">{$ciudad->city_name} - {$ciudad->postal_code}</option>
+                                    {/foreach}      
+                                </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12">
-                                <label for="inputAddress">Dirección de Correo</label>
+                                <label for="inputCorreo">Dirección de Correo</label>
                                 <input type="email" class="form-control" id="inputCorreo" name="email" placeholder="email@ejemplo.com">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12">
-                                <label for="inputAddress">Dirección principal</label>
+                                <label for="inputDireccionPrincipal">Dirección principal</label>
                                 <input type="text" class="form-control" id="inputDireccionPrincipal" name="direccion" placeholder="calle los naranjos nº 5">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputCity">Ciudad</label>
-                                <input type="text" class="form-control" id="inputCiudad" name="ciudad" placeholder="Málaga">
+                                <label for="inputTelefono">Telefono</label>
+                                <input type="text" class="form-control" id="inputTelefono" name="telefono" placeholder=" Ejem: 697078461">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary offset-4 offset-md-0 col-4" id="registrar" name="registrar">Registrar</button>
                     </form>
+                    <div class="row">
+                        <div class="col-12 error">
+                            <!-- Error de usuario en uso -->
+                            {if $usuarioEnUso}
+                                <p>{$usuarioEnUso}</p>
+                            {/if}
+                            <!-- Errores de campo no relleno -->
+                            {if $faltaUsuario}
+                                <p>{$faltaUsuario}</p>
+                            {/if}
+                            {if $faltaNombre}
+                                <p>{$faltaNombre}</p>
+                            {/if}
+                            {if $faltaApellidos}
+                                <p>{$faltaApellidos}</p>
+                            {/if}
+                           
+                            {if $faltaClave}
+                                <p>{$faltaClave}</p>
+                            {/if}
+                            {if $faltaEmail}
+                                <p>{$faltaEmail}</p>
+                            {/if}
+                            {if $faltaDireccion}
+                                <p>{$faltaDireccion}</p>
+                            {/if}
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 login-form-2">
                     <div class="login-logo">
@@ -61,7 +102,7 @@
                     <div class="form-row">
                         <div class="form-group col-12">
                             <label for="exampleInputEmail1">Email :</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email" {if $email}value="{$email}"{/if}>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email" {if $email}value="{$email}"{/if}>
                         </div>
                         {if $falloEmail}
                             <div class="form-group col-12">

@@ -28,12 +28,11 @@ class DataBase
     }
 
     public static function obtenerUsuario($email){
-        $sql = "SELECT nombre, apellidos, email, clave from users where email = '".$email."'";
+        $sql = "SELECT first_name, contact_email, C.password from customer as C where contact_email = '".$email."'";
         $resultado = self::ejecutaConsulta($sql);
         
         $usuario = array();
         $row = $resultado->fetchObject();
-
         if ($row) {
             while ($row != null) {
                 $usuario[] = $row;
@@ -42,16 +41,32 @@ class DataBase
         }else{
             $usuario = null;
         }
-        
         return $usuario;
     }
+
+    public static function obtenerTabla($nombreTabla){
+        $sql = "SELECT * from ".$nombreTabla."";
+        $resultado = self::ejecutaConsulta($sql);
+        
+        $usuario = array();
+        $row = $resultado->fetchObject();
+        if ($row) {
+            while ($row != null) {
+                $rows[] = $row;
+                $row = $resultado->fetchObject();
+            }
+        }else{
+            $rows = null;
+        }
+        
+        return $rows;
+    }
     
-    public static function registrarUsuario($nombre, $apellidos, $genero, $email, $clave){
-        $sql="INSERT INTO users(nombre,apellidos,genero,fnac,email,clave) values ('";
-        $sql = $sql.$nombre."','".$apellidos."','".$genero."','2147483647','".$email."','".$clave."')";
+    public static function registrarUsuario($first_name, $last_name, $user_name, $password, $contact_email, $contact_phone, $city_id, $address){
+        $sql = "INSERT INTO customer(first_name, last_name, user_name, password, contact_email, contact_phone, city_id, address) ";
+        $sql .= ("values ('".$first_name."', '".$last_name."', '".$user_name."', '".$password."', '".$contact_email."', '".$contact_phone."', '".$city_id."', '".$address."')");
 
         $insercion = self::ejecutaConsulta($sql);
-
     }
     
     public static function obtenerProductos()
@@ -68,7 +83,22 @@ class DataBase
                 $row = $resultado->fetchObject();
             }
         }
+
         return $productos;
+    }
+
+    // cambiar funcion para que busque por email
+    public static function existeUsuario($usuario){
+        $sql = "SELECT * from customer where user_name = '$usuario'";
+        $resultado = self::ejecutaConsulta($sql);
+
+        if($resultado->fetchObject() == null){
+            $respuesta = false;
+        }else{
+            $respuesta = true;
+        }
+
+        return $respuesta;
     }
 /*
 public static function obtieneProductos()
