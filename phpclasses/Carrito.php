@@ -51,6 +51,7 @@ class Carrito{
 
     public function vaciarCarro(){
         unset($_SESSION['carrito']);
+        $_SESSION['carrito'] = [];
     }
 }
 

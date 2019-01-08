@@ -35,6 +35,10 @@ if (isset($_POST['eliminar'])) {
     $carro->eliminarProducto($_POST['id']);
 }
 
+if (isset($_POST['vaciar'])) {
+    $carro->vaciarCarro();
+}
+
 $smarty->assign('gastoEnvio', 3);
 $smarty->assign('carro', $carro);
 $smarty->assign('carrito', $carro->carro());

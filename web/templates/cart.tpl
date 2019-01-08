@@ -59,7 +59,19 @@ usuarioConectado=$usuarioConectado}
       </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($carro->precioTotal() + (($carro->precioTotal() * 16) / 100) + $gastoEnvio)|string_format:"%.2f"} €</span> </li>
     </ul>
-    
+
+    <!-- Botones -->
+    <div class="row">
+      <form action="#" method="POST" class="col-6">
+        <button type="submit" name="vaciar" class="btn btn-danger" data-toggle="tooltip"
+        data-placement="top" title="Vaciar carrito"><span class="oi oi-trash"></span></button>
+      </form>
+      <form action="#" method="POST" class="col-6">
+        <button type="submit" name="finalizar" class="btn btn-info" data-toggle="tooltip"
+        data-placement="top" title="Finalizar Compra"><span class="oi oi-cart"></span></button>
+      </form>
+    </div>
+
   </div>
 </div>
 {include file="footer.tpl"}
