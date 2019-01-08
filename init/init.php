@@ -20,6 +20,12 @@ $BD = new DataBase();
 if (basename($_SERVER['PHP_SELF'], ".php") != "login") {
     $_SESSION["pagina"] = basename($_SERVER['PHP_SELF'], ".php");
 }
+
+require_once('./../phpclasses/Carrito.php');
+
+$carro = new Carrito();
+
 $smarty->assign("usuario", isset($_SESSION["user"]) ? $_SESSION["user"] : "");
-$smarty->assign('new', 10);
+$smarty->assign('new', $carro->longitud());
 $smarty->assign('usuarioConectado', !empty($_SESSION["user"]));
+

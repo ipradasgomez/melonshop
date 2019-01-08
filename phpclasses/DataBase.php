@@ -87,6 +87,19 @@ class DataBase
         return $productos;
     }
 
+    public static function obtenerProducto($id)
+    {
+        $sql = "SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id and item.id = $id;";
+        $resultado = self::ejecutaConsulta($sql);
+        $producto = null;
+
+        if ($resultado) {
+            $producto = $resultado->fetchObject();    
+        }
+
+        return $producto;
+    }
+
     // cambiar funcion para que busque por email
     public static function existeUsuario($usuario){
         $sql = "SELECT * from customer where user_name = '$usuario'";

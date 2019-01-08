@@ -20,16 +20,16 @@ usuarioConectado=$usuarioConectado}
         </thead>
         <tbody>
 
-          {foreach from=$lista item=producto}
+          {foreach from=$carrito item=producto name=bucleProductos}
           <tr>
-            <th scope="row">{$producto[0]}</th>
-            <td>{$producto[1]|ucfirst}</td>
-            <td>{$producto[2]}€/{$producto[5]}</td>
+            <th scope="row">{$smarty.foreach.bucleProductos.index}</th>
+            <td>{$producto[0]->item_name|ucfirst}</td>
+            <td>{$producto[0]->price}€/{$producto[0]->unit_short}</td>
             <td>
-              <form><input type="hidden" name="pid" value="pid"><input type="number" min="1" value="1" class=" inputCant"
-                  placeholder="Cantidad">{$producto[5]}</form> 
+              <form><input type="hidden" name="pid" value="pid"><input type="number" min="1" value="{$producto[1]}" class=" inputCant"
+                  placeholder="Cantidad"></form> 
             </td>
-            <td>{$producto[2]} €</td>
+            <td>{$producto[1] * $producto[0]->price} €</td>
             <td><button type="button" class="btn btn-info" data-toggle="tooltip"
               data-placement="top" title="Aplicar cambios"><span class="oi oi-pencil"></span></button></td>
             <td><button type="button" class="btn btn-danger" data-toggle="tooltip"
@@ -45,8 +45,8 @@ usuarioConectado=$usuarioConectado}
       <li class="list-group-item">
         <h2><small>Resumen</small></h2>
       </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>7</span> </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>13,35 €</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>{$carrito|@count}</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>3 €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>2,54 €</span>
       </li>

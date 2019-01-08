@@ -27,7 +27,7 @@ $lista=[
     [15,"fresas",3,"fresas_01.jpg","descripcion de producto","kg"]
     ];
 
+$smarty->assign('carrito', $carro->carro());
 $smarty->assign("lista", $lista);
-$smarty->assign("new", 10);
 //CARGAMOS EL TEMPLATE
 $smarty->display('cart.tpl');
