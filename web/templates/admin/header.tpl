@@ -24,22 +24,18 @@
                 {if $mostrarBarra}
                 <div class="btn-group btn-topmenu" role="group" aria-label="Menu Bar">
                     {if $smarty.server.PHP_SELF|basename eq "index.php"}
-                    <input type="text" class="form-control inputCant" placeholder="Buscar">
-                    <button type="button" class="btn btn-light btnNav" data-toggle="tooltip" data-placement="bottom"
-                        title="Buscar"><span class="oi oi-magnifying-glass"></span></button>
                     {/if}
-                    <a href="./cart.php"><button type="button" class="btn btn-light notificationBadge btnNav"
-                            data-badge="{$new}" data-toggle="tooltip" data-placement="bottom" title="Carrito"><span
+                    <a href="./cart.php"><button type="button" class="btn btn-light notificationBadge btnNav border"
+                            data-placement="bottom" title="Carrito"><span
                                 class="oi oi-basket"></span></button></a>
                     <div class="btn-group" role="group">
-                        <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav" data-toggle="dropdown"
+                        <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav border" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             {if $usuarioConectado}<span><b>{$usuario}</b></span> {/if}<span class="oi oi-person"></span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="profileMenu">
                             {if $usuarioConectado}
                             <a class="dropdown-item" href="./settings.php">Ajustes</a>
-                            <a class="dropdown-item" href="./orders.php">Mis Pedidos</a>
                             <a class="dropdown-item" href="./..logout.php">Cerrar sesión</a>
                             {else}
                             <a class="dropdown-item" href="./login.php">Conectarme</a>
