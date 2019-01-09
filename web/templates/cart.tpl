@@ -18,8 +18,13 @@ usuarioConectado=$usuarioConectado}
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody id="sortable">
-
+        <tbody>
+{if $productosEnCarrito|@count eq 0}
+<tr><td colspan="7">
+<div class="alert alert-danger" role="alert">
+  <strong>¡Oh vaya!</strong> Aún no hay artículos en el carrito...
+</div></td></tr>
+{else}
           {foreach from=$productosEnCarrito item=producto name=bucleProductos}
           <tr>
             <th scope="row">{$smarty.foreach.bucleProductos.index + 1}</th>
@@ -43,6 +48,7 @@ usuarioConectado=$usuarioConectado}
             </td>
           </tr>
           {/foreach}
+          {/if}
         </tbody>
       </table>
     </div>
@@ -53,23 +59,29 @@ usuarioConectado=$usuarioConectado}
         <h2><small>Resumen</small></h2>
       </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>{$productosEnCarrito|@count}</span> </li>
+      {if $productosEnCarrito|@count>0}
       <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{$precioCarro} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>{$gastoEnvio} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>{(($precioCarro * 16) / 100)|string_format:"%.2f"} €</span>
       </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($precioCarro + (($precioCarro * 16) / 100) + $gastoEnvio)|string_format:"%.2f"} €</span> </li>
+    {/if}
     </ul>
 
     <!-- Botones -->
     <div class="row">
-      <form action="#" method="POST" class="col-6">
+    {if $productosEnCarrito|@count > 0}
+      <form action="#" method="post" class="col-6">
         <button type="submit" name="vaciar" class="btn btn-danger col-12" data-toggle="tooltip"
         data-placement="top" title="Vaciar carrito"><span class="oi oi-trash"></span></button>
       </form>
-      <form action="#" method="POST" class="col-6">
+      <form action="#" method="post" class="col-6">
         <button type="submit" name="finalizar" class="btn btn-info col-12" data-toggle="tooltip"
         data-placement="top" title="Finalizar Compra"><span class="oi oi-cart"></span></button>
       </form>
+      {else}
+  <a href="./"  class="btn btn-info col-12">Ir a la tienda</a>
+{/if}
     </div>
 
   </div>
