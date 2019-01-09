@@ -23,8 +23,11 @@ if(isset($_SESSION['user'])){
 }
 
 if(isset($_POST['add'])){
+    $cant=(int)$BD::filtraString($_POST['cant']);
+    if(ctype_digit($cant)&& $cant>0){
     $carro->addProducto($BD::obtenerProducto($_POST['id']), $_POST['cant']);
     $smarty->assign('new', $carro->longitud());
+    }
 }
 
 
