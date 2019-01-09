@@ -28,7 +28,7 @@
                     {if $smarty.server.PHP_SELF|basename eq "index.php"}
                     <form class="form-inline" method="get">
                         <div class="form-group">
-                            <input type="text" name="palabra" class="form-control inputCant" placeholder="Buscar" />
+                            <input type="text" name="buscar" class="form-control inputCant" placeholder="Buscar" value="{if isset($busqueda)}{$busqueda}{/if}"/>
                             <button type="submit" class="btn btn-light btnNav" data-toggle="tooltip" data-placement="bottom"
                                 title="Buscar"><span class="oi oi-magnifying-glass"></span></button>
                         </div>

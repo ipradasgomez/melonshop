@@ -6,11 +6,12 @@
  */
 require '../init/init.php';
 
-if(isset($_GET["palabra"])){
-    $word = strtolower(empty($_GET["palabra"]) ? "" : $_GET["palabra"]);
+if(isset($_GET["buscar"])){
+    $word = strtolower(empty($_GET["buscar"]) ? "" : $_GET["buscar"]);
     if(substr($word, -1)=="s"){
         $word=substr($word,0, strlen($word)-1);
     };
+    $smarty->assign("busqueda",$word);
     $smarty->assign("lista", $BD::obtenerProductosCoincidentes($BD::filtraString($word)));
 }else{
     $smarty->assign("lista", $BD::obtenerProductos());
