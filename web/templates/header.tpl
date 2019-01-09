@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="../resources/css/open-iconic-bootstrap.css">
     <link rel="stylesheet" href="../resources/css/mystyles.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
     <nav class="container-fluid sticky-top data">
