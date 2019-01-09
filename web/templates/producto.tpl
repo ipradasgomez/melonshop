@@ -12,7 +12,7 @@
                 <div class="col-8">
                     <input type="text" name="id" id="id" value="{$producto->id}" hidden>
                     <input type="text" name="nombre" id="nombre" value="{$producto->item_name}" hidden>
-                    <input class="form-control" type="number" name="cant" value="1" id="example-number-input">
+                    <input class="form-control" type="number" name="cant" min="0" value="1" id="example-number-input">
                 </div>
                 <div class="col-2">
                     <button type="submit" name="add" class="btn btn-danger btn-sm addProduct" role="button">Añadir</button>
