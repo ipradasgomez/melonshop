@@ -63,11 +63,11 @@ usuarioConectado=$usuarioConectado}
     <!-- Botones -->
     <div class="row">
       <form action="#" method="POST" class="col-6">
-        <button type="submit" name="vaciar" class="btn btn-danger" data-toggle="tooltip"
+        <button type="submit" name="vaciar" class="btn btn-danger col-12" data-toggle="tooltip"
         data-placement="top" title="Vaciar carrito"><span class="oi oi-trash"></span></button>
       </form>
       <form action="#" method="POST" class="col-6">
-        <button type="submit" name="finalizar" class="btn btn-info" data-toggle="tooltip"
+        <button type="submit" name="finalizar" class="btn btn-info col-12" data-toggle="tooltip"
         data-placement="top" title="Finalizar Compra"><span class="oi oi-cart"></span></button>
       </form>
     </div>
