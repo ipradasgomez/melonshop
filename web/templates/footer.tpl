@@ -45,21 +45,12 @@
 <script src="../resources/js/jquery.js"></script>
 <script src="../resources/js/popper.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip()
 	})
 </script>
-
-
-<script>
-	$( function() {
-		$("tbody").sortable();
-	});
-</script>
-
 </body>
 
 </html>
