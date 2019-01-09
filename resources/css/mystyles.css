@@ -405,3 +405,9 @@ footer>.row {
 .borderless td, .borderless th {
     border: none;
 }
+
+#nav-tabContent{
+    border-width:0px 1px 1px 1px;
+    border-color:lightgray;
+    border-style:solid;
+}
