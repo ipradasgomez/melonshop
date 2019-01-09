@@ -32,4 +32,5 @@ if(isset($_POST['add'])){
 }
 
 
+$smarty->assign('productosEnCarrito',$carro->carro());
 $smarty->display('index.tpl');

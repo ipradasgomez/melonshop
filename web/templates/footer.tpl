@@ -50,7 +50,10 @@
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip()
 	})
-</script>
+	$('.dropdown-menu').on("click.bs.dropdown", function (e) {
+    e.stopPropagation();              
+});
+	</script>
 </body>
 
 </html>

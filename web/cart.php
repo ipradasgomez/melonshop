@@ -21,14 +21,16 @@ if (isset($_POST['modificar'])) {
 
 if (isset($_POST['eliminar'])) {
     $carro->eliminarProducto($_POST['id']);
+    $smarty->assign('new', $carro->longitud());
 }
 
 if (isset($_POST['vaciar'])) {
     $carro->vaciarCarro();
+    $smarty->assign('new', $carro->longitud());
 }
 
 $smarty->assign('gastoEnvio', 3);
 $smarty->assign('precioCarro', $carro->precioTotal());
-$smarty->assign('carrito', $carro->carro());
+$smarty->assign('productosEnCarrito',$carro->carro());
 //CARGAMOS EL TEMPLATE
 $smarty->display('cart.tpl');

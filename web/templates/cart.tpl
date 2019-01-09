@@ -20,7 +20,7 @@ usuarioConectado=$usuarioConectado}
         </thead>
         <tbody id="sortable">
 
-          {foreach from=$carrito item=producto name=bucleProductos}
+          {foreach from=$productosEnCarrito item=producto name=bucleProductos}
           <tr>
             <th scope="row">{$smarty.foreach.bucleProductos.index + 1}</th>
             <td>{$producto[0]->item_name|ucfirst}</td>
@@ -52,7 +52,7 @@ usuarioConectado=$usuarioConectado}
       <li class="list-group-item">
         <h2><small>Resumen</small></h2>
       </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>{$carrito|@count}</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>{$productosEnCarrito|@count}</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{$precioCarro} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>{$gastoEnvio} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>{(($precioCarro * 16) / 100)|string_format:"%.2f"} €</span>

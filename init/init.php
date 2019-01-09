@@ -25,6 +25,7 @@ require_once('./../phpclasses/Carrito.php');
 
 $carro = new Carrito();
 
+$smarty->assign('productosEnCarrito',$carro->carro());
 $smarty->assign("usuario", isset($_SESSION["user"]) ? $_SESSION["user"] : "");
 $smarty->assign('new', $carro->longitud());
 $smarty->assign('usuarioConectado', !empty($_SESSION["user"]));

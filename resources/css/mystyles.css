@@ -401,3 +401,7 @@ footer>.row {
     text-decoration:none;
     color:#fff;
 }
+
+.borderless td, .borderless th {
+    border: none;
+}
