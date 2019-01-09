@@ -16,7 +16,7 @@
             <span class="textBtnAdmin3">Producto</span>
         </a>
         <a href="#" class="col-4 border btnAdmin m-3 ml-5 mt-2">
-
+            <span class="oi oi-bolt iconoAdmin4"></span></br>
         </a>
 </div>
 {include file="admin/footer.tpl"}
