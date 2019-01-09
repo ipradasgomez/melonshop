@@ -53,11 +53,11 @@ usuarioConectado=$usuarioConectado}
         <h2><small>Resumen</small></h2>
       </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>{$carrito|@count}</span> </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{$carro->precioTotal()} €</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{$precioCarro} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>{$gastoEnvio} €</span> </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>{(($carro->precioTotal() * 16) / 100)|string_format:"%.2f"} €</span>
+      <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>{(($precioCarro * 16) / 100)|string_format:"%.2f"} €</span>
       </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($carro->precioTotal() + (($carro->precioTotal() * 16) / 100) + $gastoEnvio)|string_format:"%.2f"} €</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($precioCarro + (($precioCarro * 16) / 100) + $gastoEnvio)|string_format:"%.2f"} €</span> </li>
     </ul>
 
     <!-- Botones -->
