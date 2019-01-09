@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../resources/css/mystyles.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
+
 <body>
     <nav class="container-fluid sticky-top data">
         <div class="row brand-row align-self-center sticky-top">
@@ -24,9 +26,13 @@
                 {if $mostrarBarra}
                 <div class="btn-group btn-topmenu" role="group" aria-label="Menu Bar">
                     {if $smarty.server.PHP_SELF|basename eq "index.php"}
-                    <input type="text" class="form-control inputCant" placeholder="Buscar">
-                    <button type="button" class="btn btn-light btnNav" data-toggle="tooltip" data-placement="bottom"
-                        title="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                    <form class="form-inline" method="get">
+                        <div class="form-group">
+                            <input type="text" name="palabra" class="form-control inputCant" placeholder="Buscar" />
+                            <button type="submit" class="btn btn-light btnNav" data-toggle="tooltip" data-placement="bottom"
+                                title="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                        </div>
+                    </form>
                     {/if}
                     <a href="./cart.php"><button type="button" class="btn btn-light notificationBadge btnNav"
                             data-badge="{$new}" data-toggle="tooltip" data-placement="bottom" title="Carrito"><span

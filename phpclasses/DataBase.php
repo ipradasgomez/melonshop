@@ -101,6 +101,24 @@ class DataBase
         return $producto;
     }
 
+    public static function obtenerProductosCoincidentes($str)
+    {
+        $sql = "SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id && item_name LIKE '%$str%';";
+        $resultado = self::ejecutaConsulta($sql);
+        $productos = array();
+
+      
+        if ($resultado) {
+            // Añadimos un elemento por cada producto obtenido
+            $row = $resultado->fetchObject();
+            while ($row != null) {
+                $productos[] = $row;
+                $row = $resultado->fetchObject();
+            }
+        }
+        return $productos;
+    }
+
     // cambiar funcion para que busque por email
     public static function existeUsuario($usuario){
         $sql = "SELECT * from customer where user_name = '$usuario'";
@@ -113,6 +131,10 @@ class DataBase
         }
 
         return $respuesta;
+    }
+
+    public static function filtraString($str){
+        return  trim(filter_var($str, FILTER_SANITIZE_STRING));
     }
 /*
 public static function obtieneProductos()
