@@ -15,6 +15,7 @@ class DataBase
             exit("No se ha podido conectar a la base de datos");
         }
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $con->exec("set names utf8");
         self::$BD = $con;
     }
 
