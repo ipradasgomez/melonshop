@@ -297,6 +297,7 @@ footer>.row {
 .product-img {
     max-height: 178px;
     min-height: 178px;
+    min-width: 100%;
 }
 
 .login-container{
