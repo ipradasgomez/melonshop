@@ -22,18 +22,25 @@ usuarioConectado=$usuarioConectado}
 
           {foreach from=$carrito item=producto name=bucleProductos}
           <tr>
-            <th scope="row">{$smarty.foreach.bucleProductos.index}</th>
+            <th scope="row">{$smarty.foreach.bucleProductos.index + 1}</th>
             <td>{$producto[0]->item_name|ucfirst}</td>
             <td>{$producto[0]->price}€/{$producto[0]->unit_short}</td>
             <td>
-              <form><input type="hidden" name="pid" value="pid"><input type="number" min="1" value="{$producto[1]}" class=" inputCant"
-                  placeholder="Cantidad"></form> 
+              <form action="#" method="POST"><input type="hidden" name="pid" value="pid"><input type="number" min="1" name="cant" value="{$producto[1]}" class=" inputCant" placeholder="Cantidad">
             </td>
             <td>{$producto[1] * $producto[0]->price} €</td>
-            <td><button type="button" class="btn btn-info" data-toggle="tooltip"
-              data-placement="top" title="Aplicar cambios"><span class="oi oi-pencil"></span></button></td>
-            <td><button type="button" class="btn btn-danger" data-toggle="tooltip"
-              data-placement="top" title="Eliminar del carrito"><span class="oi oi-trash"></span></button></td>
+            <td>
+              <input type="text" name="id" id="id" value="{$producto[0]->id}" hidden>
+              <button type="submit" name="modificar" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Aplicar cambios"><span class="oi oi-pencil"></span></button>
+            </td>
+              </form> 
+            <td>
+              <form action="#" method="post">
+                <input type="text" name="id" id="id" value="{$producto[0]->id}" hidden>
+                <button type="submit" name="eliminar" class="btn btn-danger" data-toggle="tooltip"
+                data-placement="top" title="Eliminar del carrito"><span class="oi oi-trash"></span></button>
+              </form>
+            </td>
           </tr>
           {/foreach}
         </tbody>
@@ -46,12 +53,25 @@ usuarioConectado=$usuarioConectado}
         <h2><small>Resumen</small></h2>
       </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>{$carrito|@count}</span> </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{} €</span> </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>3 €</span> </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>2,54 €</span>
+      <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{$carro->precioTotal()} €</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>{$gastoEnvio} €</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>{(($carro->precioTotal() * 16) / 100)|string_format:"%.2f"} €</span>
       </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>18,97 €</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($carro->precioTotal() + (($carro->precioTotal() * 16) / 100) + $gastoEnvio)|string_format:"%.2f"} €</span> </li>
     </ul>
+
+    <!-- Botones -->
+    <div class="row">
+      <form action="#" method="POST" class="col-6">
+        <button type="submit" name="vaciar" class="btn btn-danger" data-toggle="tooltip"
+        data-placement="top" title="Vaciar carrito"><span class="oi oi-trash"></span></button>
+      </form>
+      <form action="#" method="POST" class="col-6">
+        <button type="submit" name="finalizar" class="btn btn-info" data-toggle="tooltip"
+        data-placement="top" title="Finalizar Compra"><span class="oi oi-cart"></span></button>
+      </form>
+    </div>
+
   </div>
 </div>
 {include file="footer.tpl"}

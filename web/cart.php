@@ -24,9 +24,23 @@ $lista=[
     [12,"datil",2.4,"datil_01.jpeg","descripcion de producto","kg"],
     [13,"feijoa",3.1,"feijoa_01.jpg","descripcion de producto","kg"],
     [14,"frambuesa",1.9,"frambuesas_01.jpg","descripcion de producto","kg"],
-    [15,"fresas",3,"fresas_01.jpg","descripcion de producto","kg"]
+[15,"fresas",3,"fresas_01.jpg","descripcion de producto","kg"]
     ];
 
+if (isset($_POST['modificar'])) {
+    $carro->modificarCant($_POST['id'], $_POST['cant']);
+}
+
+if (isset($_POST['eliminar'])) {
+    $carro->eliminarProducto($_POST['id']);
+}
+
+if (isset($_POST['vaciar'])) {
+    $carro->vaciarCarro();
+}
+
+$smarty->assign('gastoEnvio', 3);
+$smarty->assign('carro', $carro);
 $smarty->assign('carrito', $carro->carro());
 $smarty->assign("lista", $lista);
 //CARGAMOS EL TEMPLATE

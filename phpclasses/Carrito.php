@@ -17,6 +17,14 @@ class Carrito{
         }
     }
 
+    public function eliminarProducto($id){
+        unset($_SESSION['carrito'][$id]);
+    }
+
+    public function modificarCant($id, $cant){
+        $_SESSION['carrito'][$id][1] = $cant;
+    }
+
     public function longitud(){
         if(isset($_SESSION['carrito'])){
             return count($_SESSION['carrito']);
@@ -27,8 +35,8 @@ class Carrito{
 
     public function precioTotal(){
         $respuesta = 0;
-        foreach ($$_SESSION['carrito'] as $key => $value) {
-            $respuesta += $value[0]->price * $value[1];
+        foreach ($_SESSION['carrito'] as $key => $value) {
+            $respuesta += ($value[0]->price * $value[1]);
         }
         return $respuesta;
     }
@@ -43,6 +51,7 @@ class Carrito{
 
     public function vaciarCarro(){
         unset($_SESSION['carrito']);
+        $_SESSION['carrito'] = [];
     }
 }
 
