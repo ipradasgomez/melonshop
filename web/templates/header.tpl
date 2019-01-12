@@ -33,6 +33,8 @@
                                 title="Buscar"><span class="oi oi-magnifying-glass"></span></button>
                         </div>
                     </form>
+                    {else}
+                    <a href="./index.php" class="btn btn-light btnNav"><b>Ir a la tienda</b></a>
                     {/if}
                     <a href="./cart.php" class="btn btn-light btnNav" id="nav-cart-hidden"
                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="top:3px" class="oi oi-basket"></span></a>
@@ -40,17 +42,16 @@
                             data-badge="{$new}"><span style="top:3px" class="oi oi-basket"></span></a>
                     {include file="nav-cart.tpl"}
                     <div class="btn-group" role="group">
-                        <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            {if $usuarioConectado}<span><b>{$usuario}</b></span> {/if}<span class="oi oi-person"></span>
+                       
+                            {if $usuarioConectado} <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><span><b>{$usuario}</b></span> <span class="oi oi-person"></span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="profileMenu">
-                            {if $usuarioConectado}
                             <a class="dropdown-item" href="./settings.php">Ajustes</a>
                             <a class="dropdown-item" href="./orders.php">Mis Pedidos</a>
                             <a class="dropdown-item" href="./logout.php">Cerrar sesión</a>
                             {else}
-                            <a class="dropdown-item" href="./login.php">Conectarme</a>
+                            <a href="./login.php" class="btn btn-light btnNav"><b>Iniciar sesión</b></a>
                             {/if}
                         </div>
                     </div>
