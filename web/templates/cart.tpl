@@ -53,24 +53,24 @@ usuarioConectado=$usuarioConectado}
       </table>
     </div>
   </div>
-  <div class="col-4 ">
+  <div class="col-4">
+  {if $productosEnCarrito|@count>0}
     <ul class="list-group">
       <li class="list-group-item">
         <h2><small>Resumen</small></h2>
       </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total artículos</span><span>{$productosEnCarrito|@count}</span> </li>
-      {if $productosEnCarrito|@count>0}
+      
       <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{$precioCarro} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>{$gastoEnvio} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>{(($precioCarro * 16) / 100)|string_format:"%.2f"} €</span>
       </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($precioCarro + (($precioCarro * 16) / 100) + $gastoEnvio)|string_format:"%.2f"} €</span> </li>
-    {/if}
+    
     </ul>
 
     <!-- Botones -->
     <div class="row">
-    {if $productosEnCarrito|@count > 0}
       <form action="#" method="post" class="col-6">
         <button type="submit" name="vaciar" class="btn btn-danger col-12" data-toggle="tooltip"
         data-placement="top" title="Vaciar carrito"><span class="oi oi-trash"></span></button>

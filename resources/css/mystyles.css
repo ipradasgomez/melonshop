@@ -412,6 +412,9 @@ footer>.row {
     border-style:solid;
 }
 
+#nav-cart{
+    z-index: 1;
+}
 
 #nav-cart-hidden{
     margin-right:-42px;
