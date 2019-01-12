@@ -65,7 +65,8 @@
                         <button type="submit" class="btn btn-primary offset-4 offset-md-0 col-4" id="registrar" name="registrar">Registrar</button>
                     </form>
                     <div class="row">
-                        <div class="col-12 error">
+                        <div class="alert alert-danger col-12" role="alert">
+                        <strong>
                             <!-- Error de usuario en uso -->
                             {if $usuarioEnUso}
                                 <p>{$usuarioEnUso}</p>
@@ -90,6 +91,7 @@
                             {if $faltaDireccion}
                                 <p>{$faltaDireccion}</p>
                             {/if}
+                            </strong>
                         </div>
                     </div>
                 </div>
@@ -105,18 +107,16 @@
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email" {if $email}value="{$email}"{/if}>
                         </div>
                         {if $falloEmail}
-                            <div class="form-group col-12">
-                                <p class="error">{$falloEmail}</p>
-                            </div>
+                            <div class="alert alert-danger col-12" role="alert">
+                        <strong>{$falloEmail}</strong></div>
                         {/if}
                         <div class="form-group col-12">
                             <label for="exampleInputPassword1">Contraseña :</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="clave">
                         </div>
                         {if $falloClave}
-                            <div class="form-group col-12">
-                                <p class="error">{$falloClave}</p>
-                            </div>
+                            <div class="alert alert-danger col-12" role="alert">
+                        <strong>{$falloClave}</strong></div>
                         {/if}
                         <div class="form-group col-12">
                             <button type="submit" name="login" id="login" class="btn btn-primary offset-4 offset-md-8 col-4 col-md-4">Entrar</button>
