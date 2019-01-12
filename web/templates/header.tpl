@@ -34,8 +34,10 @@
                         </div>
                     </form>
                     {/if}
+                    <a href="./cart.php" class="btn btn-light btnNav" id="nav-cart-hidden"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="top:3px" class="oi oi-basket"></span></a>
                     <a href="./cart.php" class="btn btn-light notificationBadge btnNav" id="nav-cart"
-                            data-badge="{$new}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="top:3px" class="oi oi-basket"></span></a>
+                            data-badge="{$new}"><span style="top:3px" class="oi oi-basket"></span></a>
                     {include file="nav-cart.tpl"}
                     <div class="btn-group" role="group">
                         <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav" data-toggle="dropdown"

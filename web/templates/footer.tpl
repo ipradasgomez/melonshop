@@ -50,9 +50,11 @@
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip()
 	})
-	$('.dropdown-menu').on("click.bs.dropdown", function (e) {
-    e.stopPropagation();              
-});
+	$('#nav-cart').mouseenter(function(){
+		if(!$('#cart-summary').hasClass('show')){
+		$('#nav-cart-hidden').click();
+		}
+	})
 	</script>
 </body>
 

@@ -1,6 +1,6 @@
 {assign var="total" value=0}
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-cart">
-<table class="table table-sm borderless" style="cursor:pointer">
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-cart-hidden" id="cart-summary">
+<table class="table table-sm borderless mb-0" style="cursor:pointer">
 {if $productosEnCarrito|@count >0}
 {foreach from=$productosEnCarrito item=producto}
        <tr>

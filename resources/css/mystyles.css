@@ -411,3 +411,8 @@ footer>.row {
     border-color:lightgray;
     border-style:solid;
 }
+
+
+#nav-cart-hidden{
+    margin-right:-42px;
+}
