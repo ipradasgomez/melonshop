@@ -10,7 +10,7 @@ require '../init/init.php';
 
 ///NUESTRO PHP
 
-$smarty->assign('precioCarro', $carro->precioTotal()+3);
+$smarty->assign('precioCarro', $carro->precioTotal()+$gastoEnvio);
 $smarty->assign('productosEnCarrito',$carro->carro());
 //CARGAMOS EL TEMPLATE
 $smarty->display('payment-address.tpl');

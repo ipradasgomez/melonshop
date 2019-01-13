@@ -29,7 +29,7 @@ if (isset($_POST['vaciar'])) {
     $smarty->assign('new', $carro->longitud());
 }
 
-$smarty->assign('gastoEnvio', 3);
+$smarty->assign('gastoEnvio', $gastoEnvio);
 $smarty->assign('precioCarro', $carro->precioTotal());
 $smarty->assign('productosEnCarrito',$carro->carro());
 //CARGAMOS EL TEMPLATE

@@ -24,7 +24,7 @@ if (basename($_SERVER['PHP_SELF'], ".php") != "login") {
 require_once('./../phpclasses/Carrito.php');
 
 $carro = new Carrito();
-
+$gastoEnvio=1.50;
 $smarty->assign('productosEnCarrito',$carro->carro());
 $smarty->assign("usuario", isset($_SESSION["user"]) ? $_SESSION["user"] : "");
 $smarty->assign('new', $carro->longitud());
