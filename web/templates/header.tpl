@@ -44,14 +44,14 @@
                     <div class="btn-group" role="group">
                        
                             {if $usuarioConectado} <button id="profileMenu" type="button" class="btn btn-light dropdown-toggle btnNav" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"><span><b>{$usuario}</b></span> <span class="oi oi-person"></span>
+                            aria-haspopup="true" aria-expanded="false" style="z-index:0"><span><b>{$usuario}</b></span> <span class="oi oi-person"></span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="profileMenu">
                             <a class="dropdown-item" href="./settings.php">Ajustes</a>
                             <a class="dropdown-item" href="./orders.php">Mis Pedidos</a>
                             <a class="dropdown-item" href="./logout.php">Cerrar sesión</a>
                             {else}
-                            <a href="./login.php" class="btn btn-light btnNav"><b>Iniciar sesión</b></a>
+                            <a href="./login.php" class="btn btn-light btnNav" style="z-index:0"><b>Iniciar sesión</b></a>
                             {/if}
                         </div>
                     </div>

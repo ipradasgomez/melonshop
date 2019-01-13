@@ -2,7 +2,7 @@
 usuarioConectado=$usuarioConectado}
 <div class="row">
   <div class="col-12">
-    {include file="breadcrumb.tpl" step="3"}
+    {include file="breadcrumb.tpl" step="1"}
   </div>
   <div class="col-8">
     <div class="table-responsive">
@@ -63,9 +63,9 @@ usuarioConectado=$usuarioConectado}
       
       <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><span>{$precioCarro} €</span> </li>
       <li class="list-group-item d-flex justify-content-between"><span>Envío</span><span>{$gastoEnvio} €</span> </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>{(($precioCarro * 16) / 100)|string_format:"%.2f"} €</span>
+      <li class="list-group-item d-flex justify-content-between"><span>Impuestos (IVA 16%)</span><span>{((($precioCarro+$gastoEnvio) * 16) / 100)|string_format:"%.2f"} €</span>
       </li>
-      <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($precioCarro + (($precioCarro * 16) / 100) + $gastoEnvio)|string_format:"%.2f"} €</span> </li>
+      <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($precioCarro + ((($precioCarro+$gastoEnvio) * 16) / 100) + $gastoEnvio)|string_format:"%.2f"} €</span> </li>
     
     </ul>
 
@@ -76,8 +76,8 @@ usuarioConectado=$usuarioConectado}
         data-placement="top" title="Vaciar carrito"><span class="oi oi-trash"></span></button>
       </form>
       <form action="#" method="post" class="col-6">
-        <button type="submit" name="finalizar" class="btn btn-info col-12" data-toggle="tooltip"
-        data-placement="top" title="Finalizar Compra"><span class="oi oi-cart"></span></button>
+        <a  href="./payment.php" class="btn btn-info col-12 text-white" data-toggle="tooltip"
+        data-placement="top" title="Finalizar Compra"><span class="oi oi-cart"></span></a>
       </form>
       {else}
   <a href="./"  class="btn btn-info col-12">Ir a la tienda</a>
