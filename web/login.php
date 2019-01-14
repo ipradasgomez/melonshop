@@ -12,25 +12,13 @@ if(!empty($_SESSION["user"])){
 // así veo si tengo que guardar el valor de email para dejarlo en el input email como value
 $smarty->assign('email', false);
 
-// inicializao las variables para mostrar o no el mensaje de error según localice los errores
-$smarty->assign('falloEmail', false);
-$smarty->assign('falloClave', false);
-$smarty->assign('usuarioEnUso', false);
-$smarty->assign('faltaUsuario', false);
-$smarty->assign('faltaNombre', false);
-$smarty->assign('faltaApellidos', false);
-$smarty->assign('faltaClave', false); 
-$smarty->assign('faltaEmail', false);
-$smarty->assign('faltaDireccion', false);
-
-
 if(isset($_POST["login"])){
     
     $usuario = $BD->obtenerUsuario($_POST["email"]);
 
     if($usuario == null){
         // localizado el fallo de Email no registrado
-        $smarty->assign('falloEmail', 'El email no está registrado, Registrese');
+        $smarty->assign('falloEmail', true);
     }else{
         // Guardo el valor del email que es valido para no perderlo
         $smarty->assign('email',$_POST['email']);
@@ -41,7 +29,7 @@ if(isset($_POST["login"])){
             $_SESSION['rol']=1;
             header("Location: ./index.php");
         } else {
-            $smarty->assign('falloClave', 'Contraseña incorrecta');
+            $smarty->assign('falloClave',true);
         }
     }
 }
@@ -57,32 +45,32 @@ if(isset($_POST['registrar'])){
     // variable para realizar el registro o no
     $registro = true;
     if (empty($_POST['usuario'])) {
-        $smarty->assign('faltaUsuario', 'Falta el usuario'); 
+        $smarty->assign('faltaUsuario', true); 
         $registro = false;
     }
 
     if (empty($_POST['nombre'])) {
-        $smarty->assign('faltaNombre', 'Falta el nombre'); 
+        $smarty->assign('faltaNombre',  true); 
         $registro = false;
     }
 
     if (empty($_POST['apellidos'])) {
-        $smarty->assign('faltaApellidos', 'Faltan los apellidos'); 
+        $smarty->assign('faltaApellidos',  true); 
         $registro = false;
     }
 
     if (empty($_POST['clave'])) {
-        $smarty->assign('faltaClave', 'Falta la clave'); 
+        $smarty->assign('faltaClave',  true); 
         $registro = false;
     }
 
     if (empty($_POST['email'])) {
-        $smarty->assign('faltaEmail', 'Falta el Email'); 
+        $smarty->assign('faltaEmail',  true); 
         $registro = false;
     }
 
     if (empty($_POST['direccion'])) {
-        $smarty->assign('faltaDireccion', 'Falta la direccion'); 
+        $smarty->assign('faltaDireccion',  true); 
         $registro = false;
     }
 
