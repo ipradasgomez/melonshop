@@ -4,6 +4,14 @@ usuarioConectado=$usuarioConectado}
     <div class="row">
         <div class="container login-container">
             <div class="row" id="loginform">
+                {if isset($registrado)}
+<div class="col-12">
+        <div class="alert alert-success col-12 text-center" role="alert">
+
+                <strong>Usuario creado correctamente</strong>
+            </div>  
+</div>
+                {/if}
                 <div class="col-md-6 login-form-1">
                     <h3>Registro</h3>
                     <form action="" method="post">
@@ -78,8 +86,13 @@ usuarioConectado=$usuarioConectado}
                                 <input type="email" class="form-control" id="inputCorreo" name="email" placeholder="email@ejemplo.com">
                                 {if isset($faltaEmail)}
                                 <div class="alert alert-danger col-12" role="alert">
-
                                     <strong>Escribe tu e-mail</strong>
+                                </div>
+                                {/if}
+                                {if isset($usuarioEnUso)}
+                                <div class="alert alert-danger col-12" role="alert">
+
+                                    <strong>El e-mail ya se encuentra en uso</strong>
                                 </div>
                                 {/if}
                             </div>
@@ -105,15 +118,6 @@ usuarioConectado=$usuarioConectado}
                         </div>
                         <button type="submit" class="btn btn-primary offset-4 offset-md-0 col-4" id="registrar" name="registrar">Registrar</button>
                     </form>
-                    <div class="row">
-                        <!-- Error de usuario en uso -->
-                        {if isset($usuarioEnUso)}
-                        <div class="alert alert-danger col-12" role="alert">
-
-                            <strong>El e-mail ya se encuentra en uso</strong>
-                        </div>
-                        {/if}
-                    </div>
                 </div>
                 <div class="col-md-6 login-form-2">
                     <div class="login-logo">

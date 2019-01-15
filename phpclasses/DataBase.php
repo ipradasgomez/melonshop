@@ -1,11 +1,8 @@
 <?php
-//require_once 'Producto.php';
-//require_once 'Ordenador.php';
-
 class DataBase
 {
     private static $BD;
-
+    private static $QUERYS;
     public function __construct()
     {
         try {
@@ -17,188 +14,115 @@ class DataBase
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $con->exec("set names utf8");
         self::$BD = $con;
+
+        //Preparamos las Querys
+        //ObtenerUsuario
+        self::$QUERYS['obtenerUsuario'] = self::$BD->prepare("SELECT first_name, contact_email, C.password from customer as C where contact_email = :email");
+        self::$QUERYS['registraUsuario'] = self::$BD->prepare("INSERT INTO customer(first_name, last_name, user_name, password, contact_email, contact_phone, city_id, address) values (:first_name, :last_name, :u_name, :u_password, :email, :phone, :city_id, :u_address)");
+        self::$QUERYS['obtenerProductos'] = self::$BD->prepare("SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id AND item_name LIKE :search");
+        self::$QUERYS['obtenerProducto'] = self::$BD->prepare("SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id and item.id = :itemid");
+        self::$QUERYS['obtenerCiudades'] = self::$BD->prepare("SELECT * FROM city");
+
     }
 
     protected static function ejecutaConsulta($sql)
     {
+        $resultado = null;
         if (isset(self::$BD)) {
-            $resultado = self::$BD->query($sql);
-        }
+            $sth = self::$BD->prepare($sql);
 
+            if ($sth) {
+                $sth->execute();
+                if (self::$BD->errorInfo()[0] == "00000") {
+                    $resultado = $sth;
+                }
+            }
+
+        }
         return $resultado;
     }
 
-    public static function obtenerUsuario($email){
-        $sql = "SELECT first_name, contact_email, C.password from customer as C where contact_email = '".$email."'";
-        $resultado = self::ejecutaConsulta($sql);
-        
-        $usuario = array();
-        $row = $resultado->fetchObject();
-        if ($row) {
-            while ($row != null) {
-                $usuario[] = $row;
-                $row = $resultado->fetchObject();
-            }
-        }else{
-            $usuario = null;
+    public static function obtenerUsuario($email)
+    {
+        $usuario = null;
+        self::$QUERYS["obtenerUsuario"]->bindParam(':email', $email, PDO::PARAM_STR, strlen($email));
+
+        if (self::$QUERYS["obtenerUsuario"]->execute()) {
+            $usuario = self::$QUERYS["obtenerUsuario"]->fetchObject();
         }
         return $usuario;
     }
-
-    public static function obtenerTabla($nombreTabla){
-        $sql = "SELECT * from ".$nombreTabla."";
-        $resultado = self::ejecutaConsulta($sql);
-        
-        $usuario = array();
-        $row = $resultado->fetchObject();
-        if ($row) {
-            while ($row != null) {
-                $rows[] = $row;
-                $row = $resultado->fetchObject();
-            }
-        }else{
-            $rows = null;
-        }
-        
-        return $rows;
-    }
-    
-    public static function registrarUsuario($first_name, $last_name, $user_name, $password, $contact_email, $contact_phone, $city_id, $address){
-        $sql = "INSERT INTO customer(first_name, last_name, user_name, password, contact_email, contact_phone, city_id, address) ";
-        $sql .= ("values ('".$first_name."', '".$last_name."', '".$user_name."', '".$password."', '".$contact_email."', '".$contact_phone."', '".$city_id."', '".$address."')");
-
-        $insercion = self::ejecutaConsulta($sql);
-    }
-    
-    public static function obtenerProductos()
-    {
-        $sql = "SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id;";
-        $resultado = self::ejecutaConsulta($sql);
-        $productos = array();
-
-        if ($resultado) {
-            // Añadimos un elemento por cada producto obtenido
-            $row = $resultado->fetchObject();
-            while ($row != null) {
-                $productos[] = $row;
-                $row = $resultado->fetchObject();
-            }
-        }
-
-        return $productos;
-    }
-
     public static function obtenerProducto($id)
     {
-        $sql = "SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id and item.id = $id;";
-        $resultado = self::ejecutaConsulta($sql);
         $producto = null;
-
-        if ($resultado) {
-            $producto = $resultado->fetchObject();    
+        self::$QUERYS["obtenerProducto"]->bindParam(':itemid', $id, PDO::PARAM_STR, strlen($id));
+        if (self::$QUERYS["obtenerProducto"]->execute()) {
+            $producto = self::$QUERYS["obtenerProducto"]->fetchObject();
         }
 
         return $producto;
     }
-
-    public static function obtenerProductosCoincidentes($str)
+    public static function obtenerProductos($search = "")
     {
-        $sql = "SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id && item_name LIKE '%$str%';";
-        $resultado = self::ejecutaConsulta($sql);
-        $productos = array();
-
-      
-        if ($resultado) {
+        $search = "%".$search."%";
+        $productos = null;
+        self::$QUERYS["obtenerProductos"]->bindParam(':search',$search, PDO::PARAM_STR);
+        if (self::$QUERYS["obtenerProductos"]->execute()) {
+            $productos = array();
             // Añadimos un elemento por cada producto obtenido
-            $row = $resultado->fetchObject();
+            $row = self::$QUERYS["obtenerProductos"]->fetchObject();
             while ($row != null) {
                 $productos[] = $row;
-                $row = $resultado->fetchObject();
+                $row = self::$QUERYS["obtenerProductos"]->fetchObject();
             }
+
         }
         return $productos;
     }
 
-    // cambiar funcion para que busque por email
-    public static function existeUsuario($usuario){
-        $sql = "SELECT * from customer where user_name = '$usuario'";
-        $resultado = self::ejecutaConsulta($sql);
+    public static function obtenerCiudades()
+    {
+        $ciudades = null;
+        if (self::$QUERYS["obtenerCiudades"]->execute()) {
+            $ciudades = array();
+            // Añadimos un elemento por cada producto obtenido
+            $row = self::$QUERYS["obtenerCiudades"]->fetchObject();
+            while ($row != null) {
+                $ciudades[] = $row;
+                $row = self::$QUERYS["obtenerCiudades"]->fetchObject();
+            }
 
-        if($resultado->fetchObject() == null){
-            $respuesta = false;
-        }else{
-            $respuesta = true;
         }
-
-        return $respuesta;
+        return $ciudades;
     }
 
-    public static function filtraString($str){
-        return  trim(filter_var($str, FILTER_SANITIZE_STRING));
+    public static function registrarUsuario($first_name, $last_name, $user_name, $password, $contact_email, $contact_phone="", $city_id, $address="")
+    {
+        $registrado = false;
+        if (self::$QUERYS["registraUsuario"]->execute(array(
+            ':first_name' => $first_name,
+            ':last_name' => $last_name,
+            ':u_name' => $user_name,
+            ':u_password' => $password,
+            ':email' => $contact_email,
+            ':phone' => $contact_phone,
+            ':city_id' => $city_id,
+            ':u_address' => $address,
+        ))) {
+            $registrado = true;
+        }
+        return $registrado;
+
     }
-/*
-public static function obtieneProductos()
-{
-$sql = "SELECT cod, nombre_corto, nombre, PVP, familia FROM producto;";
-$resultado = self::ejecutaConsulta($sql);
-$productos = array();
 
-if ($resultado) {
-// Añadimos un elemento por cada producto obtenido
-$row = $resultado->fetch();
-while ($row != null) {
-$productos[] = new Producto($row);
-$row = $resultado->fetch();
-}
-}
+    public static function existeUsuario($email)
+    {
+        return self::obtenerUsuario($email) != null;
+    }
 
-return $productos;
+    public static function filtraString($str)
+    {
+        return trim(filter_var($str, FILTER_SANITIZE_STRING));
+    }
 }
-
-public static function obtieneOrdenador($ord)
-{
-$sql = "SELECT producto.cod, nombre_corto, COALESCE( nombre , '' ) as nombre, PVP, procesador, RAM, disco, grafica, unidadoptica, SO, COALESCE( otros , '' ) as otros FROM producto, ordenador WHERE producto.cod=ordenador.cod AND producto.cod='$ord'  ";
-
-$resultado = self::ejecutaConsulta($sql);
-
-if ($resultado) {
-return $resultado->fetchObject();
-}else{
-return false;
-}
-}
-
-public static function obtieneProducto($codigo)
-{
-$sql = "SELECT cod, nombre_corto, nombre, PVP, familia FROM producto";
-$sql .= " WHERE cod='" . $codigo . "'";
-$resultado = self::ejecutaConsulta($sql);
-$producto = null;
-
-if (isset($resultado)) {
-$row = $resultado->fetch();
-$producto = new Producto($row);
-}
-
-return $producto;
-}
-
-public static function verificaCliente($nombre, $contrasena)
-{
-$sql = "SELECT usuario FROM usuarios ";
-$sql .= "WHERE usuario='$nombre' ";
-$sql .= "AND contrasena='" . md5($contrasena) . "';";
-$resultado = self::ejecutaConsulta($sql);
-$verificado = false;
-
-if (isset($resultado)) {
-$fila = $resultado->fetch();
-if ($fila !== false) {
-$verificado = true;
-}
-
-}
-return $verificado;
-}
- */
-}
+ 

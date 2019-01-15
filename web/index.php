@@ -12,7 +12,7 @@ if(isset($_GET["buscar"])){
         $word=substr($word,0, strlen($word)-1);
     };
     $smarty->assign("busqueda",$word);
-    $smarty->assign("lista", $BD::obtenerProductosCoincidentes($BD::filtraString($word)));
+    $smarty->assign("lista", $BD::obtenerProductos($BD::filtraString($word)));
 }else{
     $smarty->assign("lista", $BD::obtenerProductos());
 }
