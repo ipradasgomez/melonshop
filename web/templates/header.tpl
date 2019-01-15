@@ -39,7 +39,7 @@
                     <a href="./cart.php" class="btn btn-light btnNav" id="nav-cart-hidden"
                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="top:3px" class="oi oi-basket"></span></a>
                     <a href="./cart.php" class="btn btn-light notificationBadge btnNav" id="nav-cart"
-                            data-badge="{$new}"><span style="top:3px" class="oi oi-basket"></span></a>
+                            {if $new gt 0}data-badge="{$new}"{/if}><span style="top:3px" class="oi oi-basket"></span></a>
                     {include file="nav-cart.tpl"}
                     <div class="btn-group" role="group">
                        
