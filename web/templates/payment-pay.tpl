@@ -6,6 +6,40 @@ usuarioConectado=$usuarioConectado}
   </div>
   <div class="col-8">
       <h2>Para pagar</h2>
+      <div class="alert alert-dark" role="alert">
+        Especifica como te gustaría realizar el pago
+      </div>
+      <form action="#" method="POST">
+        <div class="row">
+          <div class="col-4">
+              <label for="tarjeta">Tipo de Tarjeta :</label>  
+          </div>
+          <div class="col-2">
+            <input class="form-check-input" type="checkbox" name="tarjeta" value="Visa" id="defaultCheck1">
+            <img src="../resources/gallery/Visa.png" alt="" class="imgCreditCard">
+          </div>
+          <div class="col-2">
+            <input class="form-check-input" type="checkbox" name="tarjeta" value="Mastercard" id="defaultCheck2">
+            <img src="../resources/gallery/Mastercard.png" alt="" class="imgCreditCard">
+          </div>
+          <div class="col-2">
+            <input class="form-check-input" type="checkbox" name="tarjeta" value="AmericanExpress" id="defaultCheck3">
+            <img src="../resources/gallery/AmericanExpres.png" alt="" class="imgCreditCard">
+          </div>
+          <div class="col-6">
+            <label for="tarjeta">Numero Tarjeta :</label>
+          </div>
+          <div class="col-6">
+            <input type="number" class="form-control" placeholder="1234 5678 9012 3456" id="tarjeta">
+          </div>
+          <div class="col-6">
+            <label for="cvv">CCV :</label>
+          </div>
+          <div class="col-6">
+            <input type="number" class="form-control" placeholder="123" id="cvv">
+          </div>
+        </div>
+      </form>
   </div>
   <div class="col-4">
     <ul class="list-group">

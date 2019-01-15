@@ -37,6 +37,17 @@ html{
     margin: 18% 0% 0% 25%;
 }
 
+.imgCreditCard{
+    height: 50px;
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+.boxCreditCard{
+    width: 120px;
+    padding-right: 10px;
+}
+
 .iconoAdmin4 {
     font-size: 170px;
     margin: 26% 0% 0% 34%;

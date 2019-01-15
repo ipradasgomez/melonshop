@@ -23,8 +23,6 @@ if (basename($_SERVER['PHP_SELF'], ".php") != "login") {
 
 require_once('./../phpclasses/Carrito.php');
 
-$_SESSION['Pago'] = 0;
-
 $carro = new Carrito();
 $gastoEnvio=1.50;
 $smarty->assign('productosEnCarrito',$carro->carro());
