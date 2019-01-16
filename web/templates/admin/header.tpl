@@ -14,7 +14,7 @@
     <nav class="container-fluid sticky-top data">
         <div class="row brand-row align-self-center sticky-top">
             <div class="col-4 offset-1">
-                <a class="navbar-brand sticky-top" href="./../index.php">
+                <a class="navbar-brand sticky-top" href="./index.php">
                     <img src="../../resources/gallery/watermelon.png" class="align-middle d-inline-block align-top logo-img"
                         alt="">
                     <h1 class="align-middle brand-text">{$logoTitle}</h1>

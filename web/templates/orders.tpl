@@ -12,7 +12,6 @@ usuarioConectado=true}
         </div>
         <div class="card-body">
             <div class="row">
-
                 <div class="col-8">
                     <div class="card col-12">
                         <div class="card-body">

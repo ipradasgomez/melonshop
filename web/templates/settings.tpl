@@ -66,7 +66,7 @@ usuarioConectado=true}
     </div>
     <div class="card mt-2">
       <div class="card-body">
-        <h5 class="card-title">Contacto</h5>
+        <h5 class="card-title"><b>Contacto</b></h5>
         <div class="row">
             <div class="form-group col-6">
               <label for="telefono">Teléfono</label>
