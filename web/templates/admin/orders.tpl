@@ -31,28 +31,38 @@ usuarioConectado=$usuarioConectado}
                     <div class="card-body">
                         <div class="list-group">
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1">Cliente</h6>
-                                <small>Hace 2 días</small>
-                              </div>                              
-                              <small>Si, ya ha llegado. Gracias de nuevo.</small><hr/>
-                              <small>Vale pues gracias por la información.</small>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Cliente</h6>
+                                    <small>Hace 2 días</small>
+                                </div>
+                                <small>Si, ya ha llegado. Gracias de nuevo.</small>
+                                <hr />
+                                <small>Vale pues gracias por la información.</small>
                             </li>
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1">Comercial</h6>
-                                <small class="text-muted">Hace 3 días</small>
-                              </div>                              
-                              <small class="text-muted">No realizan entregas los fines de semana. Espere al lunes y si no contáctenos de nuevo.</small>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Comercial</h6>
+                                    <small class="text-muted">Hace 3 días</small>
+                                </div>
+                                <small class="text-muted">No realizan entregas los fines de semana. Espere al lunes y
+                                    si no contáctenos de nuevo.</small>
                             </li>
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
                                 <div class="d-flex w-100 justify-content-between">
-                                  <h6 class="mb-1">Cliente</h6>
-                                  <small>Hace 4 días</small>
-                                </div>                                
-                                <small>Buenas, el pedido pone que ya ha sido entregado pero aún estoy esperándolo... ¿Está todo bien?</small>
-                              </li>
-                          </div>
+                                    <h6 class="mb-1">Cliente</h6>
+                                    <small>Hace 4 días</small>
+                                </div>
+                                <small>Buenas, el pedido pone que ya ha sido entregado pero aún estoy esperándolo...
+                                    ¿Está todo bien?</small>
+                            </li>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-10"><input class="form-control" type="text" placeholder="Escribe un mensaje..."></div>
+                                <div class="col-2"><button type="button" data-toggle="tooltip" data-placement="bottom"
+                                        data-original-title="Enviar mensaje" class="btn btn-primary mt-1"><span class="oi oi-comment-square"></span></button></div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -69,14 +79,22 @@ usuarioConectado=$usuarioConectado}
                     <div class="card-body">
                         <div class="list-group">
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1">Cliente</h6>
-                                <small>Hace 30 minutos</small>
-                              </div>                              
-                              <small>¿Son frutas de temporada?</small>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Cliente</h6>
+                                    <small>Hace 30 minutos</small>
+                                </div>
+                                <small>¿Son frutas de temporada?</small>
                             </li>
-                          </div>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-10"><input class="form-control" type="text" placeholder="Escribe un mensaje..."></div>
+                                <div class="col-2"><button type="button" data-toggle="tooltip" data-placement="bottom"
+                                        data-original-title="Enviar mensaje" class="btn btn-primary mt-1"><span class="oi oi-comment-square"></span></button></div>
+                            </div>
+                        </form>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -98,28 +116,34 @@ usuarioConectado=$usuarioConectado}
                     <div class="card-body">
                         <div class="list-group">
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1">Cliente</h6>
-                                <small>Hace 2 días</small>
-                              </div>                              
-                              <small>Si, ya ha llegado. Gracias de nuevo.</small>
-                              <small>Vale pues gracias por la información.</small>
-                            </li>                  
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Cliente</h6>
+                                    <small>Hace 2 días</small>
+                                </div>
+                                <small>La dirección es la misma de entrega... espero su respuesta.</small>
+                            </li>
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1">Comercial</h6>
-                                <small class="text-muted">Hace 3 días</small>
-                              </div>                              
-                              <small class="text-muted">No realizan entregas los fines de semana. Espere al lunes y si no contáctenos de nuevo.</small>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Comercial</h6>
+                                    <small class="text-muted">Hace 3 días</small>
+                                </div>
+                                <small class="text-muted">Envíenos su información y las recogeremos.</small>
                             </li>
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
                                 <div class="d-flex w-100 justify-content-between">
-                                  <h6 class="mb-1">Cliente</h6>
-                                  <small>Hace 4 días</small>
-                                </div>                                
-                                <small>Buenas, el pedido pone que ya ha sido entregado pero aún estoy esperándolo... ¿Está todo bien?</small>
-                              </li>
-                          </div>
+                                    <h6 class="mb-1">Cliente</h6>
+                                    <small>Hace 4 días</small>
+                                </div>
+                                <small>Las frutas me han llegado demasiado dañadas.</small>
+                            </li>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-10"><input class="form-control" type="text" placeholder="Escribe un mensaje..."></div>
+                                <div class="col-2"><button type="button" data-toggle="tooltip" data-placement="bottom"
+                                        data-original-title="Enviar mensaje" class="btn btn-primary mt-1"><span class="oi oi-comment-square"></span></button></div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -130,7 +154,7 @@ usuarioConectado=$usuarioConectado}
             Pedidos confirmados
         </div>
 
-        
+
         <ul class="list-group">
             <li class="list-group-item">Pedido #0000011</li>
             <li class="list-group-item">Pedido #0000012</li>
