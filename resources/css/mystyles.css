@@ -37,6 +37,11 @@ html{
     margin: 18% 0% 0% 25%;
 }
 
+.listaFinal{
+    width: 100%;
+    margin: 0;
+}
+
 .imgCreditCard{
     height: 50px;
     width: 70px;

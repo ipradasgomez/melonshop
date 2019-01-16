@@ -15,15 +15,15 @@ usuarioConectado=$usuarioConectado}
               <label for="tarjeta">Tipo de Tarjeta :</label>  
           </div>
           <div class="col-2">
-            <input class="form-check-input" type="checkbox" name="tarjeta" value="Visa" id="defaultCheck1">
+            <input class="form-check-input" type="radio" name="tarjeta" value="Visa" id="defaultCheck1">
             <img src="../resources/gallery/Visa.png" alt="" class="imgCreditCard">
           </div>
           <div class="col-2">
-            <input class="form-check-input" type="checkbox" name="tarjeta" value="Mastercard" id="defaultCheck2">
+            <input class="form-check-input" type="radio" name="tarjeta" value="Mastercard" id="defaultCheck2">
             <img src="../resources/gallery/Mastercard.png" alt="" class="imgCreditCard">
           </div>
           <div class="col-2">
-            <input class="form-check-input" type="checkbox" name="tarjeta" value="AmericanExpress" id="defaultCheck3">
+            <input class="form-check-input" type="radio" name="tarjeta" value="AmericanExpress" id="defaultCheck3">
             <img src="../resources/gallery/AmericanExpres.png" alt="" class="imgCreditCard">
           </div>
           <div class="col-6">
@@ -38,6 +38,12 @@ usuarioConectado=$usuarioConectado}
           <div class="col-6">
             <input type="number" class="form-control" placeholder="123" id="cvv">
           </div>
+        </div>
+      </form>
+      <form action="#" method="POST">
+        <div class="row m-1">
+          <button type="submit" class="btn btn-Danger col-2" name="atrasDireccion">Atras</button>
+          <button type="submit" class="btn btn-info col-2 offset-8" name="continuarPago">Continuar</button>
         </div>
       </form>
   </div>
@@ -56,11 +62,6 @@ usuarioConectado=$usuarioConectado}
       <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($precioCarro + (($precioCarro * 16) / 100))|string_format:"%.2f"} €</span> </li>
     </ul>
   </div>
-  <div class="col-12">
-    <form action="#" method="POST">
-        <button type="submit" class="btn btn-Danger col-2" name="atras">Atras</button>
-        <button type="submit" class="btn btn-info col-2 offset-4" name="continuar">Continuar</button>
-      </form>
-  </div>
+  
 </div>
 {include file="footer.tpl"}

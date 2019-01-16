@@ -11,8 +11,8 @@ usuarioConectado=$usuarioConectado}
         <input type="text" class="form-control" id="direccion" placeholder="C/Direccion Super Aleatoria">
         <small class="form-text text-muted">Si desea modificarla, puedo hacerlo desde aquí.</small>
       </div>
-      <button type="submit" class="btn btn-primary" name="continuar">Continuar</button>
-      <button type="submit" class="btn btn-danger" name="modificar">Modificar</button>
+      <button type="submit" class="btn btn-danger col-2" name="modificar">Modificar</button>
+      <button type="submit" class="btn btn-primary col-2 offset-7" name="continuarDireccion">Continuar</button>
     </form>
   </div>
   <div class="col-4">
@@ -28,7 +28,6 @@ usuarioConectado=$usuarioConectado}
       </ul> 
       </li>
       <li class="list-group-item d-flex justify-content-between"><span>Total</span><span>{($precioCarro + (($precioCarro * 16) / 100))|string_format:"%.2f"} €</span> </li>
-    
     </ul>
   </div>
 </div>

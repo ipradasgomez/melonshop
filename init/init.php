@@ -21,6 +21,8 @@ if (basename($_SERVER['PHP_SELF'], ".php") != "login") {
     $_SESSION["pagina"] = basename($_SERVER['PHP_SELF'], ".php");
 }
 
+$_SESSION['Pago'] = 1;
+
 require_once('./../phpclasses/Carrito.php');
 
 $carro = new Carrito();

@@ -9,7 +9,7 @@ if(empty($_SESSION["user"])|| $_SESSION["rol"]!=1){
     header("Location: ./login.php");
 }
 
-$ciudades = $BD->obtenerTabla('city');
+$ciudades = $BD->obtenerCiudades();
 
 $smarty->assign('ciudades', $ciudades);
 $smarty->assign('productosEnCarrito',$carro->carro());
