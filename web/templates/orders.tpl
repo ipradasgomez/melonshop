@@ -12,7 +12,6 @@ usuarioConectado=true}
         </div>
         <div class="card-body">
             <div class="row">
-
                 <div class="col-8">
                     <div class="card col-12">
                         <div class="card-body">
@@ -69,13 +68,34 @@ usuarioConectado=true}
                 <div class="col-4">
                     <div class="row">
                         <div class="card col-12 p-0">
-                            <div class="card-header">
-                                Información del pedido
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Total artículos: 2</li>
-                                <li class="list-group-item">Precio total: 23,40€</li>
-                                <li class="list-group-item">Entregado: 24/03/2050</li>
+              
+<<<<<<< HEAD
+$ciudades = $BD->obtenerCiudades();
+=======              <div class="card-header">
+              
+<<<<<<< HEAD
+$ciudades = $BD->obtenerCiudades();
+=======                  Información del pedido
+              
+<<<<<<< HEAD
+$ciudades = $BD->obtenerCiudades();
+=======              </div>
+              
+<<<<<<< HEAD
+$ciudades = $BD->obtenerCiudades();
+=======              <ul class="list-group list-group-flush">
+              
+<<<<<<< HEAD
+$ciudades = $BD->obtenerCiudades();
+=======                  <li class="list-group-item">Total artículos: 2</li>
+              
+<<<<<<< HEAD
+$ciudades = $BD->obtenerCiudades();
+=======                  <li class="list-group-item">Precio total: 23,40€</li>
+              
+<<<<<<< HEAD
+$ciudades = $BD->obtenerCiudades();
+=======                  <li class="list-group-item">Entregado: 24/03/2050</li>
                             </ul>
                         </div>
                     </div>

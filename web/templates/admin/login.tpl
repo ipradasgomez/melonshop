@@ -1,4 +1,4 @@
-{include file="admin/header.tpl" title="Melon Shop" new=$new logoTitle="MelonShop" mostrarBarra=true usuarioConectado=$usuarioConectado}
+{include file="admin/header.tpl" title="Admin MelonShop" logoTitle="MelonShop Admin Panel" mostrarBarra=true usuarioConectado=$usuarioConectado}
 <div class="container">
     <div class="row">
         <div class="container login-container">

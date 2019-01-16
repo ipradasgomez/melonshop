@@ -11,6 +11,6 @@ if(empty($_SESSION["user"])|| $_SESSION["rol"]!=1){
 
 $ciudades = $BD->obtenerCiudades();
 
-$smarty->assign('ciudades', $ciudades);
+$smarty->assign('ciudades', $BD->obtenerCiudades());
 $smarty->assign('productosEnCarrito',$carro->carro());
 $smarty->display('settings.tpl');
