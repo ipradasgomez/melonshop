@@ -9,27 +9,30 @@
 require '../init/init.php';
 
 // así veo si tengo que guardar el valor de email para dejarlo en el input email como value
-$smarty->assign('email', false);
+$smarty->assign('codigo', false);
 
 // inicializao las variables para mostrar o no el mensaje de error según localice los errores
-$smarty->assign('falloEmail', false);
+$smarty->assign('falloCodigo', false);
 $smarty->assign('falloClave', false);
 
 
 if(isset($_POST["login"])){
     
-    $usuario = $BD->obtenerUsuario($_POST["email"]);
+    $empleado = $BD->obtenerEmpleado($_POST["codigo"]);
 
-    if($usuario == null){
+    if($empleado == null){
         // localizado el fallo de Email no registrado
-        $smarty->assign('falloEmail', 'El email no está registrado, Registrese');
+        $smarty->assign('falloCodigo', 'El codigo introducido no coincide con ningún empleado');
     }else{
         // Guardo el valor del email que es valido para no perderlo
-        $smarty->assign('email',$_POST['email']);
-        
-        if(isset($_POST['clave']) && password_verify ($_POST['clave'],$usuario[0]->password)){ 
-            // recojo el nombre de usuario en la sesión
-            $_SESSION['user']=$usuario[0]->first_name;
+        $smarty->assign('codigo',$_POST['codigo']);
+        echo $empleado->employe_password.'</br>';
+        echo $_POST['clave'].'</br>';
+        echo password_hash($_POST['clave'], PASSWORD_DEFAULT).'</br>';
+        echo password_verify($_POST['clave'], $empleado->employe_password);
+        if(isset($_POST['clave']) && password_verify($_POST['clave'], $empleado->employe_password)){ 
+            // recojo el nombre de empleado en la sesión
+            $_SESSION['user']=$empleado->first_name;
             header("Location: ./index.php");
         } else {
             $smarty->assign('falloClave', 'Contraseña incorrecta');

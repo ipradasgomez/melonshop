@@ -8,12 +8,12 @@
                     <form action="" method="post">
                     <div class="form-row">
                         <div class="form-group col-12">
-                            <label for="exampleInputEmail1">Email :</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email" {if $email}value="{$email}"{/if}>
+                            <label for="exampleInputCodigo">Codigo Empleado :</label>
+                            <input type="number" class="form-control" id="exampleInputCodigo" aria-describedby="emailHelp" placeholder="Ejem: 1547" name="codigo" {if $codigo}value="{$codigo}"{/if}>
                         </div>
-                        {if $falloEmail}
+                        {if $falloCodigo}
                             <div class="form-group col-12">
-                                <p class="error">{$falloEmail}</p>
+                                <p class="error">{$falloCodigo}</p>
                             </div>
                         {/if}
                         <div class="form-group col-12">
