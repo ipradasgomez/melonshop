@@ -1,7 +1,7 @@
 <div class="col-12 col-md-4 col-lg-3 productbox d-flex flex-column">
     <img class="img-responsive img-fluid img-thumbnail product-img" src="../resources/gallery/images/{$producto->item_photo}">
-    <div id="{($producto->id+4)}"></div>
-    <div class="producttitle d-flex justify-content-between">       
+    <div class="producttitle d-flex justify-content-between"> 
+            <div><span>{$producto->item_name|ucfirst}</span></div>      
         <div class="text-nowrap"><small>{$producto->price}€/{$producto->unit_short}</small></div>
     </div>
     <div class="componentes-box"><small><em> {$producto->description}</em></small></div>
