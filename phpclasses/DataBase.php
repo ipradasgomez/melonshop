@@ -17,7 +17,8 @@ class DataBase
 
         //Preparamos las Querys
         //ObtenerUsuario
-        self::$QUERYS['obtenerUsuario'] = self::$BD->prepare("SELECT first_name, contact_email, C.password from customer as C where contact_email = :email");
+        self::$QUERYS['obtenerUsuario'] = self::$BD->prepare("SELECT first_name, contact_email, password from customer where contact_email = :email");
+        self::$QUERYS['obtenerEmpleado'] = self::$BD->prepare("SELECT rol, id, employee_code, employe_password, first_name, last_name from employee where employee_code = :codigo");
         self::$QUERYS['registraUsuario'] = self::$BD->prepare("INSERT INTO customer(first_name, last_name, user_name, password, contact_email, contact_phone, city_id, address) values (:first_name, :last_name, :u_name, :u_password, :email, :phone, :city_id, :u_address)");
         self::$QUERYS['obtenerProductos'] = self::$BD->prepare("SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id AND item_name LIKE :search");
         self::$QUERYS['obtenerProducto'] = self::$BD->prepare("SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id and item.id = :itemid");
@@ -52,6 +53,18 @@ class DataBase
         }
         return $usuario;
     }
+
+    public static function obtenerEmpleado($codigo)
+    {
+        $empleado = null;
+        self::$QUERYS["obtenerEmpleado"]->bindParam(':codigo', $codigo, PDO::PARAM_STR, strlen($codigo));
+
+        if (self::$QUERYS["obtenerEmpleado"]->execute()) {
+            $empleado = self::$QUERYS["obtenerEmpleado"]->fetchObject();
+        }
+        return $empleado;
+    }
+
     public static function obtenerProducto($id)
     {
         $producto = null;
