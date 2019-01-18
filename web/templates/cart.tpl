@@ -31,7 +31,7 @@ usuarioConectado=$usuarioConectado}
             <td>{$producto[0]->item_name|ucfirst}</td>
             <td>{$producto[0]->price}€/{$producto[0]->unit_short}</td>
             <td>
-              <form action="#" method="POST"><input type="hidden" name="pid" value="pid"><input type="number" min="1" name="cant" value="{$producto[1]}" class=" inputCant" placeholder="Cantidad">
+              <form action="#" method="POST"><input data-pid="{$producto[0]->id}" type="number" min="1" name="cant" value="{$producto[1]}" class="inputCant" placeholder="Cantidad">
             </td>
             <td>{$producto[1] * $producto[0]->price} €</td>
             <td>
