@@ -5,7 +5,7 @@
             <span class="oi oi-basket iconoAdmin1"></span></br>
             <span class="textBtnAdmin1">Pedidos</span>
         </a>
-        <a href="#" class="col-4 border btnAdmin m-3 ml-5 mt-2">
+        <a href="./empleados.php" class="col-4 border btnAdmin m-3 ml-5 mt-2">
             <span class="oi oi-person iconoAdmin2"></span></br>
             <span class="textBtnAdmin2">Empleados</span>
         </a>
