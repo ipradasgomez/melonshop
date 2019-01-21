@@ -15,8 +15,8 @@ usuarioConectado=true}
             <input type="text" class="form-control" id="nombreCliente" placeholder="Escribe tus apellidos">
           </div>
         </div>
-          <h5 class="card-title"><b>Dirección de residencia</b></h5>
-          <div class="row">
+        <h5 class="card-title"><b>Dirección de residencia</b></h5>
+        <div class="row">
           <div class="form-group col-12">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -28,7 +28,7 @@ usuarioConectado=true}
                 {/foreach}
               </select>
             </div>
-            
+
             <input type="text" class="form-control" id="nombreCliente" placeholder="Dirección">
           </div>
 
@@ -37,24 +37,26 @@ usuarioConectado=true}
         <a href="#" class="btn btn-primary float-right">Guardar cambios</a>
       </div>
     </div>
-
-<div class="card mt-2">
+    <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><b>Contraseña</b></h5>
+        <h5 class="card-title"><b>Dirección de entrega</b></h5>
         <div class="row">
-            <div class="form-group col-12">
-              <label for="telefono">Introduce tu contraseña actual</label>
-              <input type="password" class="form-control" id="oldpassword" placeholder="*****">
+          <div class="form-group col-12">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="selectCiudadEntrega">Ciudad</label>
+              </div>
+              <select class="custom-select" id="selectCiudadEntrega">
+                {foreach from=$ciudades item=ciudad}
+                <option value="{$ciudad->id}">{$ciudad->city_name} - {$ciudad->postal_code}</option>
+                {/foreach}
+              </select>
             </div>
-            <div class="form-group col-6">
-              <label for="nombreCliente">Introduce tu contraseña nueva</label>
-              <input type="password" class="form-control" id="newpass" placeholder="******">
-            </div>
-            <div class="form-group col-6">
-              <label for="nombreCliente">Repite la nueva contraseña</label>
-              <input type="password" class="form-control" id="newpassrepeat" placeholder="******">
-            </div>
+
+            <input type="text" class="form-control" id="nombreCliente" placeholder="Dirección">
           </div>
+
+        </div>
         <a href="#" class="btn btn-primary float-right">Guardar cambios</a>
       </div>
     </div>
@@ -63,41 +65,39 @@ usuarioConectado=true}
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><b>Dirección de entrega</b></h5>
+        <h5 class="card-title"><b>Contraseña</b></h5>
         <div class="row">
-            <div class="form-group col-12">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="selectCiudadEntrega">Ciudad</label>
-                </div>
-                <select class="custom-select" id="selectCiudadEntrega">
-                  {foreach from=$ciudades item=ciudad}
-                  <option value="{$ciudad->id}">{$ciudad->city_name} - {$ciudad->postal_code}</option>
-                  {/foreach}
-                </select>
-              </div>
-              
-              <input type="text" class="form-control" id="nombreCliente" placeholder="Dirección">
-            </div>
-  
+          <div class="form-group col-12">
+            <label for="telefono">Introduce tu contraseña actual</label>
+            <input type="password" class="form-control" id="oldpassword" placeholder="*****">
           </div>
+          <div class="form-group col-6">
+            <label for="nombreCliente">Introduce tu contraseña nueva</label>
+            <input type="password" class="form-control" id="newpass" placeholder="******">
+          </div>
+          <div class="form-group col-6">
+            <label for="nombreCliente">Repite la nueva contraseña</label>
+            <input type="password" class="form-control" id="newpassrepeat" placeholder="******">
+          </div>
+        </div>
         <a href="#" class="btn btn-primary float-right">Guardar cambios</a>
       </div>
     </div>
+
     <div class="card mt-2">
       <div class="card-body">
         <h5 class="card-title"><b>Contacto</b></h5>
         <div class="row">
-            <div class="form-group col-6">
-              <label for="telefono">Teléfono</label>
-              <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
-            </div>
-            <div class="form-group col-6">
-              <label for="nombreCliente">E-mail</label>
-              <input type="text" class="form-control" id="nombreCliente" placeholder="Escribe tus apellidos">
-           <small>Recuerda que este e-mail será necesario para conectarte</small>
-            </div>
+          <div class="form-group col-6">
+            <label for="telefono">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
           </div>
+          <div class="form-group col-6">
+            <label for="nombreCliente">E-mail</label>
+            <input type="text" class="form-control" id="nombreCliente" placeholder="Escribe tus apellidos">
+            <small>Recuerda que este e-mail será necesario para conectarte</small>
+          </div>
+        </div>
         <a href="#" class="btn btn-primary float-right">Guardar cambios</a>
       </div>
     </div>
