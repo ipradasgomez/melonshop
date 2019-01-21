@@ -1,4 +1,5 @@
-{include file="admin/header.tpl" title="Admin MelonShop" logoTitle="MelonShop Admin Panel" mostrarBarra=true usuarioConectado=$usuarioConectado}
+{include file="admin/header.tpl" title="Admin MelonShop" logoTitle="MelonShop Admin Panel" mostrarBarra=true
+usuarioConectado=$usuarioConectado}
 <div class="row">
         <div class="col-1"></div>
         <a href="./orders.php" class="col-4 border btnAdmin m-3 mt-2">
