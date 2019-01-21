@@ -41,15 +41,16 @@ html{
     padding-right: 10px;
 }
 
-.iconoAdmin4 {
-    font-size: 170px;
-    margin: 26% 0% 0% 34%;
+.iconoAdmin {
+    font-size: 150px;
 }
 
 .btnAdmin {
+    height: 350px;
+    width: 350px;
     background-color: #FFFF94;
-border: 58px solid transparent;
-border-radius: 100%;
+    border-radius: 50%;
+    margin: 0;
 }
 
 body {
@@ -295,7 +296,9 @@ footer>.row {
     padding-left: 15px;
 }
 
-
+.cartEmpleado{
+    padding: 0%;
+}
 
 .productbox {
     background-color: #ffffff;

@@ -7,6 +7,7 @@ usuarioConectado=$usuarioConectado}
         </div>
         <div id="accordion">
             <div class="card">
+            <!-- Cabecera de la card -->
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link w-100" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
@@ -16,42 +17,34 @@ usuarioConectado=$usuarioConectado}
                         </button>
                     </h5>
                 </div>
-
+                <!-- Desplegable -->
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
+                    <div class="card-body cartEmpleado">
                         <div class="list-group">
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">Cliente</h6>
-                                    <small>Hace 2 días</small>
+                                    <h5 class="mb-1">Nombre:</h5>
                                 </div>
-                                <small>Si, ya ha llegado. Gracias de nuevo.</small>
-                                <hr />
-                                <small>Vale pues gracias por la información.</small>
+                                <h4>Ismael Ponce Gaparros</h4>
                             </li>
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">Comercial</h6>
-                                    <small class="text-muted">Hace 3 días</small>
+                                    <h5 class="mb-1">Activo desde:</h5>
+                                    <h5 class="text-muted">24 de Enero del 2017 (24/01/2017)</h4>
                                 </div>
-                                <small class="text-muted">No realizan entregas los fines de semana. Espere al lunes y
-                                    si no contáctenos de nuevo.</small>
                             </li>
-                            <li href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                            <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">Cliente</h6>
-                                    <small>Hace 4 días</small>
+                                    <h5 class="mb-1">Ultimo pedido entregado:</h5>
+                                    <h6 class="text-muted">Hace 1 dia.</h6>
                                 </div>
-                                <small>Buenas, el pedido pone que ya ha sido entregado pero aún estoy esperándolo...
-                                    ¿Está todo bien?</small>
                             </li>
                         </div>
-                        <form>
-                            <div class="row">
-                                <div class="col-10"><input class="form-control" type="text" placeholder="Escribe un mensaje..."></div>
-                                <div class="col-2"><button type="button" data-toggle="tooltip" data-placement="bottom"
-                                        data-original-title="Enviar mensaje" class="btn btn-primary mt-1"><span class="oi oi-comment-square"></span></button></div>
-                            </div>
+                        <form class="row d-flex justify-content-around mt-3">
+                            <button type="submit" name="modificar" class="btn btn-primary col-2" data-toggle="tooltip" data-placement="top" title="Enviar mensaje"><span class="oi oi-text"></span></button>
+                            <button type="submit" name="modificar" class="btn btn-info col-2" data-toggle="tooltip" data-placement="top" title="Modificar perfil"><span class="oi oi-pencil"></span></button>
+                            <button type="submit" name="modificar" class="btn btn-secondary col-2" data-toggle="tooltip" data-placement="top" title="Contactar"><span class="oi oi-phone"></span></button>
+                            <button type="button" name="Borrar" class="btn btn-danger col-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Dar de baja"><span class="oi oi-trash"></span></button>
                         </form>
                     </div>
                 </div>
@@ -65,25 +58,34 @@ usuarioConectado=$usuarioConectado}
                     </button>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body">
+                   <div class="card-body cartEmpleado">
                         <div class="list-group">
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">Cliente</h6>
-                                    <small>Hace 30 minutos</small>
+                                    <h5 class="mb-1">Nombre:</h5>
                                 </div>
-                                <small>¿Son frutas de temporada?</small>
+                                <h4>Daniel Fernández Blanco</h4>
+                            </li>
+                            <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Activo desde:</h5>
+                                    <h5 class="text-muted">13 de Diciembre del 2018 (13/12/2018)</h4>
+                                </div>
+                            </li>
+                            <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Ultimo pedido entregado:</h5>
+                                    <h6 class="text-muted">Hace 3 horas.</h6>
+                                </div>
                             </li>
                         </div>
-                        <form>
-                            <div class="row">
-                                <div class="col-10"><input class="form-control" type="text" placeholder="Escribe un mensaje..."></div>
-                                <div class="col-2"><button type="button" data-toggle="tooltip" data-placement="bottom"
-                                        data-original-title="Enviar mensaje" class="btn btn-primary mt-1"><span class="oi oi-comment-square"></span></button></div>
-                            </div>
+                        <form class="row d-flex justify-content-around mt-3">
+                            <button type="submit" name="modificar" class="btn btn-primary col-2" data-toggle="tooltip" data-placement="top" title="Enviar mensaje"><span class="oi oi-text"></span></button>
+                            <button type="submit" name="modificar" class="btn btn-info col-2" data-toggle="tooltip" data-placement="top" title="Modificar perfil"><span class="oi oi-pencil"></span></button>
+                            <button type="submit" name="modificar" class="btn btn-secondary col-2" data-toggle="tooltip" data-placement="top" title="Contactar"><span class="oi oi-phone"></span></button>
+                            <button type="button" name="Borrar" class="btn btn-danger col-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Dar de baja"><span class="oi oi-trash"></span></button>
                         </form>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -101,45 +103,35 @@ usuarioConectado=$usuarioConectado}
                         </button>
                     </h5>
                 </div>
-                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-                    <div class="card-body">
+                <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                   <div class="card-body cartEmpleado">
                         <div class="list-group">
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">Cliente</h6>
-                                    <small>Hace 2 días</small>
+                                    <h5 class="mb-1">Nombre:</h5>
                                 </div>
-                                <small>Si, ya ha llegado. Gracias de nuevo.</small>
-                                <hr />
-                                <small>Vale pues gracias por la información.</small>
+                                <h4>Bruno Esteban Fernandez</h4>
                             </li>
                             <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">Comercial</h6>
-                                    <small class="text-muted">Hace 3 días</small>
+                                    <h5 class="mb-1">De Baja desde:</h5>
+                                    <h5 class="text-muted">ayer (21/01/2019)</h4>
                                 </div>
-                                <small class="text-muted">No realizan entregas los fines de semana. Espere al lunes y
-                                    si no contáctenos de nuevo.</small>
-                            </li>
-                            <li href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">Cliente</h6>
-                                    <small>Hace 4 días</small>
-                                </div>
-                                <small>Buenas, el pedido pone que ya ha sido entregado pero aún estoy esperándolo...
-                                    ¿Está todo bien?</small>
                             </li>
                         </div>
-                        <form>
-                            <div class="row">
-                                <div class="col-10"><input class="form-control" type="text" placeholder="Escribe un mensaje..."></div>
-                                <div class="col-2"><button type="button" data-toggle="tooltip" data-placement="bottom"
-                                        data-original-title="Enviar mensaje" class="btn btn-primary mt-1"><span class="oi oi-comment-square"></span></button></div>
-                            </div>
+                        <form class="row d-flex justify-content-around mt-3">
+                            <button type="submit" name="modificar" class="btn btn-primary col-2" data-toggle="tooltip" data-placement="top" title="Modificar perfil"><span class="oi oi-pencil"></span></button>
+                            <button type="submit" name="modificar" class="btn btn-secondary col-2" data-toggle="tooltip" data-placement="top" title="Contactar"><span class="oi oi-phone"></span></button>
+                            <button type="submit" name="modificar" class="btn btn-info col-2" data-toggle="tooltip" data-placement="top" title="Dar de alta"><span class="oi oi-person"></span></button>
                         </form>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row mt-3">
+            <form action="#" class="col-12">
+                <button type="submit" name="modificar" class="btn btn-info col-3 offset-4 pt-3 pb-3" data-toggle="tooltip" data-placement="top" title="Dar de alta a un empleado nuevo"><span class="oi oi-plus"></span></button>
+            </form>
         </div>
     </div>
 </div>
