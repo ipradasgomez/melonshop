@@ -38,6 +38,26 @@ usuarioConectado=true}
       </div>
     </div>
 
+<div class="card mt-2">
+      <div class="card-body">
+        <h5 class="card-title"><b>Contraseña</b></h5>
+        <div class="row">
+            <div class="form-group col-12">
+              <label for="telefono">Introduce tu contraseña actual</label>
+              <input type="password" class="form-control" id="oldpassword" placeholder="*****">
+            </div>
+            <div class="form-group col-6">
+              <label for="nombreCliente">Introduce tu contraseña nueva</label>
+              <input type="password" class="form-control" id="newpass" placeholder="******">
+            </div>
+            <div class="form-group col-6">
+              <label for="nombreCliente">Repite la nueva contraseña</label>
+              <input type="password" class="form-control" id="newpassrepeat" placeholder="******">
+            </div>
+          </div>
+        <a href="#" class="btn btn-primary float-right">Guardar cambios</a>
+      </div>
+    </div>
   </div>
   <div class="col-6">
 
@@ -73,8 +93,9 @@ usuarioConectado=true}
               <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
             </div>
             <div class="form-group col-6">
-              <label for="nombreCliente">?????</label>
+              <label for="nombreCliente">E-mail</label>
               <input type="text" class="form-control" id="nombreCliente" placeholder="Escribe tus apellidos">
+           <small>Recuerda que este e-mail será necesario para conectarte</small>
             </div>
           </div>
         <a href="#" class="btn btn-primary float-right">Guardar cambios</a>
