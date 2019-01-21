@@ -142,10 +142,12 @@ usuarioConectado=$usuarioConectado}
                             </div>
                             {if isset($falloClave)}
                             <div class="alert alert-danger col-12" role="alert">
-
                                 <p><strong>Clave incorrecta</strong></p>
                             </div>
                             {/if}
+                            <div class="col-12">
+                            <a href="./recovery.php"><small>¿Has olvidado tu contraseña?</small></a>
+                            </div>
                             <div class="form-group col-12">
                                 <button type="submit" name="login" id="login" class="btn btn-primary offset-4 offset-md-8 col-4 col-md-4">Entrar</button>
                             </div>

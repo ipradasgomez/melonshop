@@ -26,10 +26,6 @@ if(isset($_POST["login"])){
     }else{
         // Guardo el valor del email que es valido para no perderlo
         $smarty->assign('codigo',$_POST['codigo']);
-        echo $empleado->employe_password.'</br>';
-        echo $_POST['clave'].'</br>';
-        echo password_hash($_POST['clave'], PASSWORD_DEFAULT).'</br>';
-        echo password_verify($_POST['clave'], $empleado->employe_password);
         if(isset($_POST['clave']) && password_verify($_POST['clave'], $empleado->employe_password)){ 
             // recojo el nombre de empleado en la sesión
             $_SESSION['user']=$empleado->first_name;

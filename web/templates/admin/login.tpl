@@ -12,18 +12,19 @@
                             <input type="number" class="form-control" id="exampleInputCodigo" aria-describedby="emailHelp" placeholder="Ejem: 1547" name="codigo" {if $codigo}value="{$codigo}"{/if}>
                         </div>
                         {if $falloCodigo}
-                            <div class="form-group col-12">
-                                <p class="error">{$falloCodigo}</p>
-                            </div>
+                             <div class="alert alert-danger col-12" role="alert">
+
+                                    <strong>No existen empleados con ese código.</strong>
+                                </div>
                         {/if}
                         <div class="form-group col-12">
                             <label for="exampleInputPassword1">Contraseña :</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="clave">
                         </div>
                         {if $falloClave}
-                            <div class="form-group col-12">
-                                <p class="error">{$falloClave}</p>
-                            </div>
+                             <div class="alert alert-danger col-12" role="alert">
+                                    <strong>La clave es incorrecta.</strong>
+                                </div>
                         {/if}
                         <div class="form-group col-12">
                             <button type="submit" name="login" id="login" class="btn btn-primary offset-4 offset-md-8 col-4 col-md-4">Entrar</button>
