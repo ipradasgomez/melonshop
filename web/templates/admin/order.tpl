@@ -1,7 +1,6 @@
 {include file="admin/header.tpl" title="Admin MelonShop" logoTitle="MelonShop Admin Panel" mostrarBarra=true
 usuarioConectado=$usuarioConectado}
 <div class="row">
-    <div class="col-12">
             <div class="col-4">
                     <div class="list-group" id="list-tab" role="tablist">
                       <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
@@ -18,6 +17,6 @@ usuarioConectado=$usuarioConectado}
                       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
                     </div>
                   </div>
-    </div>
+   
 </div>
 {include file="admin/footer.tpl"}
