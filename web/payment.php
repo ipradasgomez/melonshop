@@ -9,6 +9,7 @@
 require '../init/init.php';
 
 if(empty($_SESSION["user"]) || $_SESSION['user'] == ""){
+    $_SESSION["paying"]=true;
     header("Location: ./login.php");
 }
 
