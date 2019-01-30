@@ -17,12 +17,39 @@ class DataBase
 
         //Preparamos las Querys
         //ObtenerUsuario
-        self::$QUERYS['obtenerUsuario'] = self::$BD->prepare("SELECT first_name, contact_email, password from customer where contact_email = :email");
+        self::$QUERYS['obtenerUsuario'] = self::$BD->prepare("SELECT id, first_name, contact_email, password, city_id, address from customer where contact_email = :email");
         self::$QUERYS['obtenerEmpleado'] = self::$BD->prepare("SELECT rol, id, employee_code, employe_password, first_name, last_name from employee where employee_code = :codigo");
         self::$QUERYS['registraUsuario'] = self::$BD->prepare("INSERT INTO customer(first_name, last_name, user_name, password, contact_email, contact_phone, city_id, address) values (:first_name, :last_name, :u_name, :u_password, :email, :phone, :city_id, :u_address)");
         self::$QUERYS['obtenerProductos'] = self::$BD->prepare("SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id AND item_name LIKE :search");
+        self::$QUERYS['crearPlacedOrder'] = self::$BD->prepare("INSERT INTO placed_order(customer_id, delivery_city_id, delivery_address) values (:customer_id, :delivery_city_id, :delivery_address) ");
+        self::$QUERYS['crearOrderItem'] = self::$BD->prepare("INSERT INTO order_item(placed_order_id, item_id, quantity, price) values (:placed_order_id, :item_id, :quantity, :price)");
+        self::$QUERYS['ultimoPlacedOrderId'] = self::$BD->prepare("SELECT id FROM placed_order where time_placed = (select max(time_placed) from placed_order)");
+        
+        /* 
+        order_item:
+            id	int(11)	
+            placed_order_id	int(11)	
+            item_id	int(11)	
+            quantity	decimal(10,3)	
+            price	decimal(10,2)
+        placed_order:
+            id	int(11)	
+            customer_id	int(11)
+            time_placed	timestamp [CURRENT_TIMESTAMP]	
+            details	text NULL	
+            delivery_city_id	int(11)	
+            delivery_address	varchar(255)	
+            grade_customer	int(11) NULL	
+            grade_employee	int(11) NULL
+
+            :customer_id, :time_placed, :details, :delivery_city_id, :delivery_address, :grade_customer, :grade_employee
+            :placed_order_id, :item_id, :quantity, :price
+        */
+
+
         self::$QUERYS['obtenerProducto'] = self::$BD->prepare("SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id and item.id = :itemid");
         self::$QUERYS['obtenerCiudades'] = self::$BD->prepare("SELECT * FROM city");
+        self::$QUERYS['obtenerOrders'] = self::$BD->prepare("SELECT * FROM placed_order");
 
     }
 
@@ -126,6 +153,51 @@ class DataBase
         }
         return $registrado;
 
+    }
+
+    public static function crearPedido($usuario, $carrito){
+        self::crearPlacedOrder($usuario);
+
+        $id = self::$BD->lastInsertId();
+        
+        foreach ($carrito as $key => $value) {
+            self::crearOrderItem($id, $value);
+        }
+    }
+
+    /*
+    first_name, contact_email, password, city_id, address
+     (:placed_order_id, :item_id, :quantity, :price)
+    */
+
+    public static function crearPlacedOrder($usuario){
+        self::$QUERYS["crearPlacedOrder"]->execute(array(
+            ':customer_id'=> $usuario->id, 
+            ':delivery_city_id'=> $usuario->city_id, 
+            ':delivery_address'=> $usuario->address
+        ));
+    }
+
+    public static function crearOrderItem($id, $item){
+        self::$QUERYS["crearOrderItem"]->execute(array(
+            ':placed_order_id'=> $id,
+            ':item_id'=> $item[0]->id,
+            ':quantity'=> $item[1],
+            ':price'=> $item[0]->price
+        ));
+    }
+
+    public static function obtenerPedidos(){
+        $pedidos = null;
+        if (self::$QUERYS["obtenerOrders"]->execute()) {
+            $pedidos = array();
+            $row = self::$QUERYS["obtenerOrders"]->fetchObject();
+            while ($row != null) {
+                $pedidos[] = $row;
+                $row = self::$QUERYS["obtenerOrders"]->fetchObject();
+            }
+        }
+        return $pedidos;
     }
 
     public static function existeUsuario($email)

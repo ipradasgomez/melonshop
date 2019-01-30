@@ -26,6 +26,7 @@ if (isset($_POST["login"])) {
         if (isset($_POST['clave']) && password_verify($_POST['clave'], $usuario->password)) {
             // recojo el nombre de usuario en la sesión
             $_SESSION['user'] = $usuario->first_name;
+            $_SESSION['userFull'] = $usuario;
             $_SESSION['rol'] = 1;
             if(isset($_SESSION["paying"])){
                 header("Location: ./payment.php");

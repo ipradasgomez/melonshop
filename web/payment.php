@@ -41,6 +41,9 @@ if(isset($_POST['continuarPago'])){
 
 if(isset($_POST['continuarFinal'])){
     $_SESSION['Pago'] = 4;
+
+    $BD->crearPedido($_SESSION['userFull'], $carro->carro());
+
     $carro->vaciarCarro();
     $smarty->assign('new', $carro->longitud());
 }
