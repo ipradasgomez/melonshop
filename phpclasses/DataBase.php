@@ -21,13 +21,16 @@ class DataBase
         self::$QUERYS['obtenerEmpleado'] = self::$BD->prepare("SELECT rol, id, employee_code, employe_password, first_name, last_name from employee where employee_code = :codigo");
         self::$QUERYS['registraUsuario'] = self::$BD->prepare("INSERT INTO customer(first_name, last_name, user_name, password, contact_email, contact_phone, city_id, address) values (:first_name, :last_name, :u_name, :u_password, :email, :phone, :city_id, :u_address)");
         self::$QUERYS['obtenerProductos'] = self::$BD->prepare("SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id AND item_name LIKE :search");
-        self::$QUERYS['crearPlacedOrder'] = self::$BD->prepare("INSERT INTO placed_order(customer_id, delivery_city_id, delivery_address) values (:customer_id, :delivery_city_id, :delivery_address) ");
+        self::$QUERYS['crearPlacedOrder'] = self::$BD->prepare("INSERT INTO placed_order(customer_id, delivery_city_id, delivery_address, details) values (:customer_id, :delivery_city_id, :delivery_address, '1') ");
         self::$QUERYS['crearOrderItem'] = self::$BD->prepare("INSERT INTO order_item(placed_order_id, item_id, quantity, price) values (:placed_order_id, :item_id, :quantity, :price)");
         self::$QUERYS['ultimoPlacedOrderId'] = self::$BD->prepare("SELECT id FROM placed_order where time_placed = (select max(time_placed) from placed_order)");
         self::$QUERYS['obtenerProducto'] = self::$BD->prepare("SELECT item.id, item_name, price, item_photo, description, unit_short FROM item, unit WHERE item.unit_id=unit.id and item.id = :itemid");
         self::$QUERYS['obtenerCiudades'] = self::$BD->prepare("SELECT * FROM city");
         self::$QUERYS['obtenerOrders'] = self::$BD->prepare("SELECT * FROM placed_order");
+        self::$QUERYS['enviarOrder'] = self::$BD->prepare("UPDATE placed_order SET details = '2' WHERE id = :order_id");
+        self::$QUERYS['obtenerOrdersList'] = self::$BD->prepare("SELECT id, time_placed FROM placed_order WHERE details LIKE :order_status ORDER BY time_placed DESC LIMIT :limite");
         self::$QUERYS['obtenerPedido'] = self::$BD->prepare("SELECT * FROM placed_order WHERE id = :order_id");
+        self::$QUERYS['obtenerPedidosDelUsuario'] = self::$BD->prepare("SELECT * FROM placed_order WHERE customer_id = :user_id ORDER BY details ASC");
         self::$QUERYS['obtenerProductosDePedido'] = self::$BD->prepare("SELECT item.id AS itemid , FORMAT(quantity,0) AS quantity, order_item.price as price, item_name, unit_short FROM order_item, item, unit WHERE item.unit_id=unit.id && item.id = order_item.item_id && placed_order_id = :order_id");
 
     }
@@ -191,6 +194,22 @@ class DataBase
 
         return $pedido;
     }
+
+    public static function obtenerPedidosDelUsuario($user_id)
+    {
+        $pedidos = null;
+        self::$QUERYS["obtenerPedidosDelUsuario"]->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        if (self::$QUERYS["obtenerPedidosDelUsuario"]->execute()) {
+            $pedidos = array();
+            $row = self::$QUERYS["obtenerPedidosDelUsuario"]->fetchObject();
+            while ($row != null) {
+                $pedidos[] = $row;
+                $row = self::$QUERYS["obtenerPedidosDelUsuario"]->fetchObject();
+            }
+        }
+        return $pedidos;
+    }
+
     public static function obtenerPedidos(){
         $pedidos = null;
         if (self::$QUERYS["obtenerOrders"]->execute()) {
@@ -202,6 +221,27 @@ class DataBase
             }
         }
         return $pedidos;
+    }
+
+    public static function obtenerPedidosEstado($order_status, $limite = 100){
+        //Estados pedidos: 1 recien hecho, 2 enviado, 3 recibido
+        $pedidos = null;
+        self::$QUERYS["obtenerOrdersList"]->bindParam(':order_status', $order_status, PDO::PARAM_STR);
+        self::$QUERYS["obtenerOrdersList"]->bindParam(':limite', $limite, PDO::PARAM_INT);
+        if (self::$QUERYS["obtenerOrdersList"]->execute()) {
+            $pedidos = array();
+            $row = self::$QUERYS["obtenerOrdersList"]->fetchObject();
+            while ($row != null) {
+                $pedidos[] = $row;
+                $row = self::$QUERYS["obtenerOrdersList"]->fetchObject();
+            }
+        }
+        return $pedidos;
+    }
+
+    public static function enviarPedido($orderid){
+        self::$QUERYS["enviarOrder"]->bindParam(':order_id', $orderid, PDO::PARAM_INT);
+        return self::$QUERYS["enviarOrder"]->execute();
     }
 
     public static function existePedido($orderid){

@@ -7,6 +7,9 @@ usuarioConectado=$usuarioConectado}
                       <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Productos</a>
                       <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Mensajes</a>
                     </div>
+                    <div class="list-group mt-2">
+                        <a class="list-group-item" href="./orders.php">Volver a pedidos</a>
+                    </div>
                   </div>
                   <div class="col-8">
                     <div class="tab-content" id="nav-tabContent">
@@ -46,10 +49,30 @@ usuarioConectado=$usuarioConectado}
                               </div>
                           </div>
                           <ul class="list-group list-group-flush">
-                              <li class="list-group-item text-right"><b>Estado:</b> Procesando</li>
+                              <li class="list-group-item text-right"><b>Estado:</b>
+                                {if $pedido->details eq '1'}
+                                Pendiente de evnío
+                                {elseif $pedido->details eq '2'}
+                                En reparto
+                                {elseif $pedido->details eq '3'}
+                                Entregado
+                                {else}
+                                Estado desconocido (la hemos liao pollito)
+                                {/if}
+                               
+                            </li>
                           </ul>
-                          <div class="container row ml-1"><button type="button" class="btn btn-success col-12">Enviar</button></div>
-                      </div>
+                          {if isset($updated) && $updated}
+                          <div class="alert alert-primary" role="alert">
+                            Se ha procedido al envío del pedido
+                          </div>
+                          {/if}
+                          {if $pedido->details eq '1'}
+                          <form action="" method="post">
+                          <div class="container row ml-1"><button type="submit" class="btn btn-success col-12" name="send">Enviar</button></div>
+                        </form>
+                        {/if}
+                        </div>
                       </div>
                       <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                         {foreach from=$items item=producto}

@@ -5,10 +5,11 @@ usuarioConectado=true}
     <div class="alert alert-info col-12" role="alert">
         <strong>Pendientes</strong>
     </div>
+    {foreach $pedidosPendientes as $pedido}
     <div class="card col-12 p-0 mb-3">
         <div class="card-header">
-            <div class="d-inline"><b>Pedido <em>#0000000000001</em></b></div>
-            <div class="float-right d-inline">12/12/2019</div>
+            <div class="d-inline"><b>Pedido <em>#{$pedido->id}</em></b></div>
+            <div class="float-right d-inline">{$pedido->time_placed}</div>
         </div>
         <div class="card-body">
             <div class="row">
@@ -17,8 +18,9 @@ usuarioConectado=true}
                         <div class="card-body">
                             <h6 class="card-subtitle mb-2 text-muted">Elementos en el pedido</h6>
                             <ul>
-                                <li>2 kg - Kiwis</li>
-                                <li>1 Caja - Manzanas</li>
+                                 {foreach $itemsPedidosDelUsuario[$pedido->id] as $elemento}
+                                <li>{$elemento->item_name|ucfirst}</li>
+                                {/foreach}
                             </ul>
                         </div>
                     </div>
@@ -30,9 +32,9 @@ usuarioConectado=true}
                                 Información del pedido
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Total artículos: 2</li>
+                                <li class="list-group-item">Total artículos: {$itemsPedidosDelUsuario[$pedido->id]|count}</li>
                                 <li class="list-group-item">Precio total: 23,40€</li>
-                                <li class="list-group-item">Fecha prevista entrega: Pendiente de envío</li>
+                               <!--<li class="list-group-item">Fecha prevista entrega: Pendiente de envío</li>--> 
                             </ul>
                         </div>
                     </div>
@@ -43,24 +45,27 @@ usuarioConectado=true}
             <li class="list-group-item text-right"><b>Estado:</b> Procesando</li>
         </ul>
     </div>
-    <div class="alert alert-success col-12 mt-3" role="alert">
-        <strong>Finalizados</strong>
+    {/foreach}
+    
+    <div class="alert alert-warning col-12 mt-3" role="alert">
+        <strong>En proceso</strong>
     </div>
+    {foreach $pedidosEnProceso as $pedido}
     <div class="card col-12 p-0 mb-3">
         <div class="card-header">
-            <div class="d-inline"><b>Pedido <em>#0000000000002</em></b></div>
-            <div class="float-right d-inline">12/12/2019</div>
+            <div class="d-inline"><b>Pedido <em>#{$pedido->id}</em></b></div>
+            <div class="float-right d-inline">{$pedido->time_placed}</div>
         </div>
         <div class="card-body">
             <div class="row">
-
                 <div class="col-8">
                     <div class="card col-12">
                         <div class="card-body">
                             <h6 class="card-subtitle mb-2 text-muted">Elementos en el pedido</h6>
                             <ul>
-                                <li>2 kg - Kiwis</li>
-                                <li>1 Caja - Manzanas</li>
+                                 {foreach $itemsPedidosDelUsuario[$pedido->id] as $elemento}
+                                <li>{$elemento->item_name|ucfirst}</li>
+                                {/foreach}
                             </ul>
                         </div>
                     </div>
@@ -68,40 +73,68 @@ usuarioConectado=true}
                 <div class="col-4">
                     <div class="row">
                         <div class="card col-12 p-0">
-              
-<<<<<<< HEAD
-$ciudades = $BD->obtenerCiudades();
-=======              <div class="card-header">
-              
-<<<<<<< HEAD
-$ciudades = $BD->obtenerCiudades();
-=======                  Información del pedido
-              
-<<<<<<< HEAD
-$ciudades = $BD->obtenerCiudades();
-=======              </div>
-              
-<<<<<<< HEAD
-$ciudades = $BD->obtenerCiudades();
-=======              <ul class="list-group list-group-flush">
-              
-<<<<<<< HEAD
-$ciudades = $BD->obtenerCiudades();
-=======                  <li class="list-group-item">Total artículos: 2</li>
-              
-<<<<<<< HEAD
-$ciudades = $BD->obtenerCiudades();
-=======                  <li class="list-group-item">Precio total: 23,40€</li>
-              
-<<<<<<< HEAD
-$ciudades = $BD->obtenerCiudades();
-=======                  <li class="list-group-item">Entregado: 24/03/2050</li>
+                            <div class="card-header">
+                                Información del pedido
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Total artículos: {$itemsPedidosDelUsuario[$pedido->id]|count}</li>
+                                <li class="list-group-item">Precio total: 23,40€</li>
+                               <!--<li class="list-group-item">Fecha prevista entrega: Pendiente de envío</li>--> 
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item text-right"><b>Estado:</b> Procesando</li>
+        </ul>
     </div>
+    {/foreach}
+
+    <div class="alert alert-success col-12 mt-3" role="alert">
+            <strong>Entregados</strong>
+        </div>
+        {foreach $pedidosEntregados as $pedido}
+        <div class="card col-12 p-0 mb-3">
+            <div class="card-header">
+                <div class="d-inline"><b>Pedido <em>#{$pedido->id}</em></b></div>
+                <div class="float-right d-inline">{$pedido->time_placed}</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="card col-12">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Elementos en el pedido</h6>
+                                <ul>
+                                     {foreach $itemsPedidosDelUsuario[$pedido->id] as $elemento}
+                                    <li>{$elemento->item_name|ucfirst}</li>
+                                    {/foreach}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="card col-12 p-0">
+                                <div class="card-header">
+                                    Información del pedido
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Total artículos: {$itemsPedidosDelUsuario[$pedido->id]|count}</li>
+                                    <li class="list-group-item">Precio total: 23,40€</li>
+                                   <!--<li class="list-group-item">Fecha prevista entrega: Pendiente de envío</li>--> 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-right"><b>Estado:</b> Procesando</li>
+            </ul>
+        </div>
+        {/foreach}
 </div>
 {include file="footer.tpl"}
