@@ -8,6 +8,12 @@
  chdir('..');
 require '../init/init.php';
 
+if(isset($_SESSION["rol"]) && $_SESSION["rol"]==1){
+    header('Location: ../');
+}
+if(isset($_SESSION["rol"]) && $_SESSION["rol"]==2){
+    header('Location: ./index.php');
+}
 // así veo si tengo que guardar el valor de email para dejarlo en el input email como value
 $smarty->assign('codigo', false);
 
@@ -28,7 +34,9 @@ if(isset($_POST["login"])){
         $smarty->assign('codigo',$_POST['codigo']);
         if(isset($_POST['clave']) && password_verify($_POST['clave'], $empleado->employe_password)){ 
             // recojo el nombre de empleado en la sesión
-            $_SESSION['user']=$empleado->first_name;
+            $_SESSION['user']=$empleado->first_name;            
+            $_SESSION['userFull'] = $empleado;
+            $_SESSION['rol'] = 2;
             header("Location: ./index.php");
         } else {
             $smarty->assign('falloClave', 'Contraseña incorrecta');

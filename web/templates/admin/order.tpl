@@ -4,7 +4,6 @@ usuarioConectado=$usuarioConectado}
             <div class="col-4">
                     <div class="list-group" id="list-tab" role="tablist">
                       <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Resumen</a>
-                      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Productos</a>
                       <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Mensajes</a>
                     </div>
                     <div class="list-group mt-2">
@@ -16,7 +15,7 @@ usuarioConectado=$usuarioConectado}
                       <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                         <div class="card col-12 p-0 mb-3">
                           <div class="card-header">
-                              <div class="d-inline"><b>Información del pedido <em>{$smarty.get.id}</em></b></div>
+                              <div class="d-inline"><b>Información del pedido <em>#{$smarty.get.id}</em></b></div>
                               <div class="float-right d-inline">12/12/2019</div>
                           </div>
                           <div class="card-body">
@@ -26,8 +25,9 @@ usuarioConectado=$usuarioConectado}
                                           <div class="card-body">
                                               <h6 class="card-subtitle mb-2 text-muted">Elementos en el pedido</h6>
                                               <ul>
-                                                  <li>2 kg - Kiwis</li>
-                                                  <li>1 Caja - Manzanas</li>
+                                              {foreach from=$items item=producto}
+                        <li>{$producto->quantity}{$producto->unit_short} - {$producto->item_name|ucfirst}</li>
+                        {/foreach}
                                               </ul>
                                           </div>
                                       </div>
@@ -39,9 +39,7 @@ usuarioConectado=$usuarioConectado}
                                                   Información del pedido
                                               </div>
                                               <ul class="list-group list-group-flush">
-                                                  <li class="list-group-item">Total artículos: 2</li>
-                                                  <li class="list-group-item">Precio total: 23,40€</li>
-                                                  <li class="list-group-item">Fecha prevista entrega: Pendiente de envío</li>
+                                                  <li class="list-group-item">Total artículos: {$items|@count}</li>
                                               </ul>
                                           </div>
                                       </div>
@@ -73,12 +71,6 @@ usuarioConectado=$usuarioConectado}
                         </form>
                         {/if}
                         </div>
-                      </div>
-                      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-                        {foreach from=$items item=producto}
-                        {$producto->quantity}{$producto->unit_short} - {$producto->item_name|ucfirst}<br/>
-                        {/foreach}
-
                       </div>
                       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
                         <div class="card-body">
